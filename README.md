@@ -18,6 +18,7 @@ This project is a personal portfolio website for presenting who I am, my career 
 - Present sections in this order: hero, experience, projects, scratch pad, and contact.
 - Use a flex-based header that adapts from laptop to tablet to phone; use the hamburger when the links no longer fit.
 - Use readable typography, consistent spacing, a restrained personal color palette, and strong visual hierarchy.
+- Use Google Sans for body and display text, loaded from Google Fonts.
 - Make project previews and experience entries quick to scan; use meaningful imagery and short descriptions rather than dense text.
 - Provide descriptive alt text for meaningful images, sufficient color contrast, and keyboard-accessible navigation.
 - Use clearly marked editable placeholders until I provide final biography, experience, project, image, and profile details.
