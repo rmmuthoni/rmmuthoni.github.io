@@ -42,15 +42,16 @@
 
 ## 8. Information architecture and core features
 ### 8.1 Navigation
-- Arrange links around a circular portrait/home link on wide screens; adapt the flex layout across devices without clipping.
+- Arrange links around a circular portrait/home link on wide screens; keep the header sticky and adapt the flex layout across devices without clipping.
 - Collapse links into a keyboard-accessible hamburger when they cannot fit; provide clear open, close, and focus states.
 
 ### 8.2 Hero
 - Introduce the owner with the provisional display name “Muthoni, Rogers,” role, and concise biography; use clearly marked editable placeholders until approved.
-- Feature a circular owner portrait displayed as a staff ID/name tag hanging from the navigation on a lanyard.
-- Use subtle swing motion to suggest a hanging badge; keep the image and name understandable without animation.
-- Use an illustrative BI/analytics background, such as dashboard sketches or a laptop with analytical visuals.
-- Include TikTok, LinkedIn, and GitHub links below the introduction, using clearly marked placeholders until approved URLs are supplied.
+- Feature a circular owner portrait in the sticky navigation and as a staff ID/name tag hanging from a lanyard.
+- Let the lanyard swing, respond to pointer hover, and support bounded elastic dragging; respect reduced-motion preferences.
+- Use an abstract, connected data-point illustration that communicates how data relationships lead to informed decisions.
+- Introduce the owner as a data analytics and analytics engineering professional, with an approximately 30-word biography.
+- Show the approved technology toolbox below the introduction. Keep social profile links in the contact section.
 - Include an obvious scroll cue that signals there is more content below.
 
 ### 8.3 Experience
@@ -97,17 +98,17 @@
 
 ## 13. Acceptance criteria
 - Navigation, hero, experience, projects, scratch pad, contact, and footer exist in the specified order.
-- The center portrait acts as a home link; navigation flexes responsively and exposes a usable hamburger when needed.
-- Hero content introduces the owner, links to TikTok/LinkedIn/GitHub, and visibly invites scrolling.
-- Experience communicates career progression; four project previews link to available details and source code.
+- The center portrait acts as a home link; the sticky navigation flexes responsively and exposes a usable hamburger when needed. On mobile, the hamburger is left and portrait is right at matching dimensions.
+- Hero content introduces the owner, presents a data-network background, toolbox icons, and a visible scroll invitation without reserving space for the background or lanyard.
+- Experience presents the two supplied roles and responsibilities; four project previews link to available details and source code.
 - Project, experience, and scratch-pad content uses supplied facts or visibly marked placeholders.
 - The interface adapts to common mobile and desktop widths and remains readable.
 - Keyboard navigation, link focus, image alternatives, and contrast receive a basic accessibility check.
 - GitHub Pages resolves images and links, and no placeholder profile, email, or project links appear as real owner information.
 
 ## 14. Content dependencies and open items
-- The owner must supply a portrait, role, biography, a CV or LinkedIn reference, and approved TikTok, LinkedIn, GitHub, and email URLs.
-- The owner must supply experience entries, organization names/logos, dates, responsibilities, and outcomes.
+- The owner must supply a portrait, role, biography, a CV or LinkedIn reference, and an email address. Approved TikTok, LinkedIn, and GitHub profiles are provided.
+- The owner has supplied two experience entries. Further roles can be added as additional details are ready.
 - The owner must select four projects and supply descriptions, imagery, contributions, detail pages, and source links where available.
 - The owner must provide scratch-pad material and decide which experiments or works in progress to publish.
 - Palette, typography, exact visual style, and optional interaction remain implementation decisions.

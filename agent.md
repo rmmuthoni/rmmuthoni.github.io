@@ -13,16 +13,17 @@ This document defines the order an AI coding agent should follow when building o
 ## Build sequence
 
 ### Navigation
-- Build the header first using a flex layout that adapts from laptop to tablet to phone.
+- Build the sticky header first using a flex layout that adapts from laptop to tablet to phone.
 - On wider layouts, arrange section links on both sides of a centered, circular portrait that serves as the Home link.
 - When links no longer fit, collapse them into an accessible hamburger menu with a clear name, state, keyboard operation, focus treatment, and close behavior.
 - Keep destinations consistent with real section IDs; prevent overflow and preserve a logical reading order.
 
 ### Hero
-- Introduce the owner as “Muthoni, Rogers” (provisional display text), with role and short biography; clearly mark editable placeholders until content is approved.
-- Display the portrait as a staff-ID/name tag hanging from the navigation on a lanyard, using restrained swing motion.
-- Set an analytics-inspired scene using meaningful BI dashboard sketches, a laptop, or related visuals; avoid empty or generic dashboard filler.
-- Add TikTok, LinkedIn, and GitHub links below the introduction using marked placeholders until the owner provides URLs.
+- Introduce the owner as “Muthoni, Rogers,” with the supplied Data Analytics and Analytics Engineering titles and short biography.
+- Display the portrait in the navigation and as a staff-ID/name tag on an animated, bounded draggable lanyard.
+- Use an abstract data-point network that converges on a decision point to ground the analytics scene; avoid empty or generic dashboard filler.
+- Use the abstract connected-data background as a full-section background so it never reserves layout space.
+- Show the supplied technology toolbox below the introduction; put social profile links in the contact section.
 - Add a visible scroll cue. Use motion as a visual prompt, not as a promise of physical haptic feedback.
 
 ### Experience

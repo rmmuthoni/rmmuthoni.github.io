@@ -4,9 +4,9 @@ This project is a personal portfolio website for presenting who I am, my career 
 
 ## Planned sections
 
-1. **Navigation** — Responsive flex layout with section links around a centered circular portrait that also links home. Collapse to an accessible hamburger menu when links no longer fit.
-2. **Hero** — Name, role, short introduction, and social links. The portrait appears as a staff-ID/name tag hanging from the navigation on a lanyard, with an analytics-inspired visual background and a cue to scroll.
-3. **Experience** — Career progression in a CV-style timeline or flow, with roles, dates, descriptions, and organization logos when available.
+1. **Navigation** — Sticky responsive flex layout with section links around a centered circular portrait that also links home. Collapse to an accessible hamburger menu when links no longer fit.
+2. **Hero** — Name, two professional titles, a concise introduction, and technology toolbox. The portrait appears as a staff-ID/name tag on a swinging, draggable lanyard over an abstract data-point network.
+3. **Experience** — CV-style timeline presenting the supplied Business Intelligence Analyst and Data Analytics Intern roles, dates, organizations, and responsibilities.
 4. **Projects** — Four featured previews with an image, short description, a link to fuller project details, and a GitHub/source link when available.
 5. **Scratch pad** — The creative process, such as an idea on paper, a BI dashboard sketch, and the realized work on a laptop. Identify unfinished work.
 6. **Contact** — A clear invitation to connect with approved email and social profile links.
@@ -39,13 +39,13 @@ portfolio/
 
 This is a starting outline; the exact files may vary with the implementation. Keep image and document paths organized and use optimized images for faster loading.
 
-## GitHub and LinkedIn
+## Social profiles
 
-Include TikTok, LinkedIn, and GitHub links in the hero or contact area and repeat them in the footer as appropriate. Replace these examples with my approved profile URLs before publication:
+The approved profiles are linked in the hero and contact sections:
 
-- TikTok: `[profile URL to be supplied]`
-- GitHub: `[profile URL to be supplied]`
-- LinkedIn: `[profile URL to be supplied]`
+- TikTok: [@rmmuthoni](https://www.tiktok.com/@rmmuthoni)
+- GitHub: [rmmuthoni](https://github.com/rmmuthoni)
+- LinkedIn: [muthoni-rogers](https://www.linkedin.com/in/muthoni-rogers/)
 - Email: `[email address to be supplied]`
 
 ## Publish with GitHub Pages
