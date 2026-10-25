@@ -79,7 +79,8 @@ if (lanyard && lanyardSwing) {
     }
 
     dragStart = { x: event.clientX, y: event.clientY };
-    lanyard.getAnimations().forEach((animation) => animation.cancel());
+    lanyardSwing.style.setProperty("--pointer-tilt", "0deg");
+    lanyard.getAnimations({ subtree: false }).forEach((animation) => animation.cancel());
     lanyard.setPointerCapture(event.pointerId);
     event.preventDefault();
   });
@@ -90,15 +91,21 @@ if (lanyard && lanyardSwing) {
     }
 
     dragStart = null;
-    lanyard.releasePointerCapture(event.pointerId);
+    lanyardSwing.style.setProperty("--pointer-tilt", "0deg");
+    if (lanyard.hasPointerCapture(event.pointerId)) {
+      lanyard.releasePointerCapture(event.pointerId);
+    }
 
     const rebound = lanyard.animate(
       [
-        { transform: lanyard.style.transform },
-        { transform: "translate3d(0, 0, 0) rotate(0deg)" },
+        { transform: lanyard.style.transform, offset: 0 },
+        { transform: "translate3d(-5px, -4px, 0) rotate(-2deg)", offset: 0.68 },
+        { transform: "translate3d(2px, 1px, 0) rotate(1deg)", offset: 0.84 },
+        { transform: "translate3d(-1px, -1px, 0) rotate(-0.4deg)", offset: 0.94 },
+        { transform: "translate3d(0, 0, 0) rotate(0deg)", offset: 1 },
       ],
       {
-        duration: reducedMotion.matches ? 0 : 650,
+        duration: reducedMotion.matches ? 0 : 820,
         easing: "cubic-bezier(.2,.8,.2,1)",
       },
     );

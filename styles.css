@@ -163,10 +163,13 @@ img {
   position: relative;
   isolation: isolate;
   display: flex;
+  width: 100%;
+  max-width: none;
   min-height: calc(100vh - var(--header-height));
   min-height: calc(100svh - var(--header-height));
   align-items: flex-start;
   overflow: clip;
+  padding-inline: clamp(1.5rem, 6vw, 6.5rem);
   padding-top: 2.25rem;
   padding-bottom: 4rem;
 }
@@ -178,7 +181,7 @@ img {
   background-image: url("assets/images/analytics-scene.svg");
   background-repeat: no-repeat;
   background-position: right 3% center;
-  background-size: min(78%, 950px) auto;
+  background-size: min(92%, 1180px) auto;
   content: "";
   opacity: 0.8;
   pointer-events: none;
@@ -187,7 +190,7 @@ img {
 .hero-copy {
   position: relative;
   z-index: 2;
-  width: min(68%, 720px);
+  width: min(58%, 820px);
   padding-top: 2rem;
 }
 
@@ -233,9 +236,9 @@ h3 {
 }
 
 h1 {
-  max-width: 9ch;
+  max-width: 10ch;
   margin-bottom: 1rem;
-  font-size: clamp(3.5rem, 7.5vw, 6rem);
+  font-size: clamp(4rem, 8.5vw, 7rem);
   font-weight: 800;
   letter-spacing: -0.075em;
 }
@@ -253,9 +256,10 @@ h1 {
 }
 
 .toolbox {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.65rem;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1.1rem 1.25rem;
+  width: min(100%, 850px);
   margin: 0;
   padding: 0;
   list-style: none;
@@ -264,58 +268,30 @@ h1 {
 .toolbox li {
   display: flex;
   align-items: center;
-  gap: 0.4rem;
-  min-height: 2.5rem;
-  padding: 0.35rem 0;
+  gap: 0.6rem;
+  min-width: 0;
+  min-height: 2.75rem;
   color: var(--ink);
-  font-size: 0.78rem;
+  font-size: 0.9rem;
   font-weight: 700;
 }
 
 .tool-icon {
   display: grid;
-  width: 1.1rem;
-  height: 1.1rem;
+  width: 1.8rem;
+  height: 1.8rem;
   place-items: center;
   flex: 0 0 auto;
 }
 
-.tool-icon svg {
+.tool-icon img {
   width: 100%;
   height: 100%;
-  overflow: visible;
-}
-
-.tool-icon--powerbi,
-.tool-icon--adf {
-  color: #b77700;
-}
-
-.tool-icon--airflow {
-  color: #087e7b;
+  object-fit: contain;
 }
 
 .tool-icon--dbt {
-  color: #e96b45;
-  font-size: 0.88rem;
-  font-weight: 800;
-  letter-spacing: -0.08em;
-}
-
-.tool-icon--python {
-  color: #326b9c;
-}
-
-.tool-icon--snowflake {
-  color: #1687bd;
-}
-
-.tool-icon--database {
-  color: var(--teal);
-}
-
-.tool-icon--kafka {
-  color: #3e4c55;
+  width: 3rem;
 }
 
 .lanyard {
@@ -531,6 +507,10 @@ h2 {
   padding-bottom: 2.25rem;
 }
 
+.timeline-entry:last-of-type {
+  padding-bottom: 0;
+}
+
 .timeline-marker {
   position: absolute;
   top: 0.5rem;
@@ -577,6 +557,10 @@ h2 {
 
 .timeline-content li {
   padding-left: 0.2rem;
+}
+
+.timeline-content ul + p {
+  color: var(--muted);
 }
 
 .timeline-note {
@@ -959,8 +943,12 @@ summary:focus-visible {
   }
 
   .tool-icon {
-    width: 1rem;
-    height: 1rem;
+    width: 1.4rem;
+    height: 1.4rem;
+  }
+
+  .tool-icon--dbt {
+    width: 2.7rem;
   }
 
   .nav-home {

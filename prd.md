@@ -51,7 +51,7 @@
 - Let the lanyard swing, respond to pointer hover, and support bounded elastic dragging; respect reduced-motion preferences.
 - Use an abstract, connected data-point illustration that communicates how data relationships lead to informed decisions.
 - Introduce the owner as a data analytics and analytics engineering professional, with an approximately 30-word biography.
-- Show the approved technology toolbox below the introduction. Keep social profile links in the contact section.
+- Show Power BI, Apache Airflow, dbt, Python, Snowflake, databases, Azure Data Factory, and Apache Kafka in the hero toolbox; keep social profile links in the contact section.
 - Include an obvious scroll cue that signals there is more content below.
 
 ### 8.3 Experience
