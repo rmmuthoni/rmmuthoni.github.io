@@ -51,83 +51,120 @@ const finePointer = window.matchMedia("(hover: hover) and (pointer: fine)");
 const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 
 if (lanyard && lanyardSwing) {
-  let dragStart = null;
+  let drag = null;
 
-  lanyard.addEventListener("pointermove", (event) => {
-    if (dragStart) {
-      const offsetX = Math.max(-42, Math.min(42, event.clientX - dragStart.x));
-      const offsetY = Math.max(-36, Math.min(36, event.clientY - dragStart.y));
-      const angle = Math.max(-12, Math.min(12, offsetX * 0.24 + offsetY * 0.04));
+  const flipLanyard = () => {
+    const flipped = lanyard.classList.toggle("is-flipped");
+    lanyard.setAttribute("aria-pressed", String(flipped));
+  };
 
-      lanyard.style.transform =
-        `translate3d(${offsetX}px, ${offsetY}px, 0) rotate(${angle}deg)`;
+  const setHoverTilt = (event) => {
+    if (!finePointer.matches || reducedMotion.matches) {
       return;
     }
 
-    if (finePointer.matches && !reducedMotion.matches) {
-      const bounds = lanyard.getBoundingClientRect();
-      const pointerOffset = (event.clientX - (bounds.left + bounds.width / 2)) / (bounds.width / 2);
-      const tilt = Math.max(-1, Math.min(1, pointerOffset)) * -8;
+    const bounds = lanyard.getBoundingClientRect();
+    const x = Math.max(-1, Math.min(1, (event.clientX - bounds.left) / bounds.width * 2 - 1));
+    const y = Math.max(-1, Math.min(1, (event.clientY - bounds.top) / bounds.height * 2 - 1));
+    lanyard.style.transform =
+      `rotateX(${y * -5}deg) rotateY(${x * 7}deg) translate3d(${-x * 3}px, ${-y * 3}px, 0)`;
+  };
 
-      lanyardSwing.style.setProperty("--pointer-tilt", `${tilt}deg`);
+  const rebound = () => {
+    lanyard.classList.remove("is-dragging");
+    if (reducedMotion.matches) {
+      lanyard.style.removeProperty("transform");
+      return;
     }
-  });
+
+    const currentTransform = lanyard.style.transform;
+    lanyard.classList.add("is-rebounding");
+    const animation = lanyard.animate(
+      [
+        { transform: currentTransform },
+        { transform: "translate3d(-5px, -3px, 0) rotate(-2deg)", offset: 0.72 },
+        { transform: "translate3d(2px, 1px, 0) rotate(0.8deg)", offset: 0.88 },
+        { transform: "none" },
+      ],
+      { duration: 720, easing: "cubic-bezier(.2,.8,.2,1)" },
+    );
+
+    animation.addEventListener("finish", () => {
+      lanyard.style.removeProperty("transform");
+      lanyard.classList.remove("is-rebounding");
+    }, { once: true });
+  };
 
   lanyard.addEventListener("pointerdown", (event) => {
-    if (!event.isPrimary || event.button !== 0 || reducedMotion.matches) {
+    if (!event.isPrimary || event.button !== 0) {
       return;
     }
 
-    dragStart = { x: event.clientX, y: event.clientY };
-    lanyardSwing.style.setProperty("--pointer-tilt", "0deg");
+    const bounds = lanyard.getBoundingClientRect();
+    drag = {
+      pointerId: event.pointerId,
+      startX: event.clientX,
+      startY: event.clientY,
+      offsetX: 0,
+      offsetY: 0,
+      minX: Math.max(-64, 8 - bounds.left),
+      maxX: Math.min(64, window.innerWidth - bounds.right - 8),
+      maxY: Math.min(72, window.innerHeight - bounds.bottom - 8),
+      moved: false,
+    };
+    lanyard.classList.add("is-dragging");
+    lanyard.classList.remove("is-rebounding");
     lanyard.getAnimations({ subtree: false }).forEach((animation) => animation.cancel());
     lanyard.setPointerCapture(event.pointerId);
     event.preventDefault();
   });
 
-  const releaseLanyard = (event) => {
-    if (!dragStart) {
+  lanyard.addEventListener("pointermove", (event) => {
+    if (!drag) {
+      setHoverTilt(event);
       return;
     }
 
-    dragStart = null;
-    lanyardSwing.style.setProperty("--pointer-tilt", "0deg");
+    const rawX = event.clientX - drag.startX;
+    const rawY = event.clientY - drag.startY;
+    drag.offsetX = Math.max(drag.minX, Math.min(drag.maxX, rawX));
+    drag.offsetY = Math.max(-24, Math.min(drag.maxY, rawY));
+    drag.moved ||= Math.hypot(rawX, rawY) > 7;
+
+    const angle = Math.max(-14, Math.min(14, drag.offsetX * -0.16 + drag.offsetY * 0.035));
+    lanyard.style.transform =
+      `translate3d(${drag.offsetX}px, ${drag.offsetY}px, 0) rotate(${angle}deg)`;
+  });
+
+  const releaseLanyard = (event, cancelled = false) => {
+    if (!drag || drag.pointerId !== event.pointerId) {
+      return;
+    }
+
+    const wasDragged = drag.moved;
+    drag = null;
     if (lanyard.hasPointerCapture(event.pointerId)) {
       lanyard.releasePointerCapture(event.pointerId);
     }
 
-    const rebound = lanyard.animate(
-      [
-        { transform: lanyard.style.transform, offset: 0 },
-        { transform: "translate3d(-5px, -4px, 0) rotate(-2deg)", offset: 0.68 },
-        { transform: "translate3d(2px, 1px, 0) rotate(1deg)", offset: 0.84 },
-        { transform: "translate3d(-1px, -1px, 0) rotate(-0.4deg)", offset: 0.94 },
-        { transform: "translate3d(0, 0, 0) rotate(0deg)", offset: 1 },
-      ],
-      {
-        duration: reducedMotion.matches ? 0 : 820,
-        easing: "cubic-bezier(.2,.8,.2,1)",
-      },
-    );
-
-    rebound.addEventListener("finish", () => {
-      lanyard.style.removeProperty("transform");
-    }, { once: true });
+    if (!cancelled && !wasDragged) {
+      flipLanyard();
+    }
+    rebound();
   };
 
-  lanyard.addEventListener("pointerup", releaseLanyard);
-  lanyard.addEventListener("pointercancel", releaseLanyard);
-
-  lanyard.addEventListener("lostpointercapture", () => {
-    if (dragStart) {
-      dragStart = null;
+  lanyard.addEventListener("pointerup", (event) => releaseLanyard(event));
+  lanyard.addEventListener("pointercancel", (event) => releaseLanyard(event, true));
+  lanyard.addEventListener("lostpointercapture", (event) => releaseLanyard(event, true));
+  lanyard.addEventListener("pointerleave", () => {
+    if (!drag) {
       lanyard.style.removeProperty("transform");
     }
   });
-
-  lanyard.addEventListener("pointerleave", () => {
-    if (!dragStart) {
-      lanyardSwing.style.setProperty("--pointer-tilt", "0deg");
+  lanyard.addEventListener("keydown", (event) => {
+    if ((event.key === "Enter" || event.key === " ") && !event.repeat) {
+      event.preventDefault();
+      flipLanyard();
     }
   });
 }

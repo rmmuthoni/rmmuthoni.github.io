@@ -65,26 +65,65 @@
 
     <main id="main">
       <section class="hero section-shell" aria-labelledby="hero-title">
-        <div class="lanyard" aria-hidden="true">
+        <div
+          class="lanyard"
+          role="button"
+          tabindex="0"
+          aria-pressed="false"
+          aria-label="Interactive ID badge. Drag to swing or click to flip."
+        >
           <div class="lanyard-swing">
-            <div class="lanyard-webbing">
-              <span class="lanyard-strap lanyard-strap--left"></span>
-              <span class="lanyard-strap lanyard-strap--right"></span>
-            </div>
-            <div class="lanyard-clip">
+            <svg class="lanyard-webbing" viewBox="0 0 240 210" aria-hidden="true">
+              <defs>
+                <linearGradient id="strap-shade" x1="0" x2="1">
+                  <stop offset="0" stop-color="#173638"/>
+                  <stop offset=".48" stop-color="#315653"/>
+                  <stop offset="1" stop-color="#142c30"/>
+                </linearGradient>
+                <path id="strap-left" d="M66-8C83 42 96 100 119 178"/>
+                <path id="strap-right" d="M174-8C157 42 144 100 121 178"/>
+              </defs>
+              <path d="M66-8C83 42 96 100 119 178M174-8C157 42 144 100 121 178"
+                fill="none" stroke="#102628" stroke-width="27" stroke-linecap="round"/>
+              <path d="M66-8C83 42 96 100 119 178M174-8C157 42 144 100 121 178"
+                fill="none" stroke="url(#strap-shade)" stroke-width="22" stroke-linecap="round"/>
+              <path d="M66-8C83 42 96 100 119 178M174-8C157 42 144 100 121 178"
+                fill="none" stroke="#a7b6a8" stroke-dasharray="1 5" stroke-width="1.2" opacity=".75"/>
+              <text fill="#edf0e8" font-family="Google Sans, sans-serif" font-size="8"
+                font-weight="700" letter-spacing="2">
+                <textPath href="#strap-left" startOffset="4%">DATA · ANALYTICS</textPath>
+              </text>
+              <text fill="#edf0e8" font-family="Google Sans, sans-serif" font-size="8"
+                font-weight="700" letter-spacing="2">
+                <textPath href="#strap-right" startOffset="8%">DATA · ANALYTICS</textPath>
+              </text>
+            </svg>
+            <div class="lanyard-hardware">
+              <span class="lanyard-crimp"></span>
               <span class="lanyard-ring"></span>
               <span class="lanyard-hook"></span>
             </div>
-            <div class="id-card">
-              <span class="id-card-slot"></span>
-              <img
-                src="assets/images/rogers_photo.jpeg"
-                alt=""
-                width="152"
-                height="152"
-              >
-              <p class="id-name">Muthoni, Rogers</p>
-              <p class="id-role">Analytics Engineer</p>
+            <div class="lanyard-card">
+              <div class="lanyard-card-inner">
+                <div class="id-card id-card--front">
+                  <span class="id-card-slot"></span>
+                  <img
+                    src="assets/images/rogers_photo.jpeg"
+                    alt=""
+                    width="152"
+                    height="152"
+                  >
+                  <p class="id-name">Muthoni, Rogers</p>
+                  <p class="id-role">Analytics Engineer</p>
+                  <span class="id-card-footer">DATA · INSIGHT · IMPACT</span>
+                </div>
+                <div class="id-card id-card--back" aria-hidden="true">
+                  <span class="id-card-back-mark">MR</span>
+                  <span class="id-card-back-name">Muthoni, Rogers</span>
+                  <span class="id-card-back-role">Data Analytics<br>Analytics Engineering</span>
+                  <span class="id-card-back-footer">IDENTIFICATION</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -241,15 +280,18 @@
 
         <div class="project-grid">
           <article class="project-card">
-            <img src="assets/images/project-visual-1.svg" alt="Illustrative project image placeholder; replace with a real project image." width="720" height="450">
+            <img src="assets/images/project-visual-1.svg" alt="Illustrative retail analytics trend chart for a dbt, Snowflake, and Power BI project." width="720" height="450">
             <div class="project-body">
-              <h3>Project title to add</h3>
-              <p>Add a short summary of the project and your contribution.</p>
+              <h3>Retail Store Analytics with dbt, Snowflake &amp; Power BI</h3>
+              <p>A retail ELT workflow that stages source data in Snowflake, models it with dbt, and supports reporting in Power BI.</p>
               <details class="project-details">
                 <summary>Project overview</summary>
-                <p>Describe the problem, your approach, tools, and outcome here.</p>
+                <p>The public repository covers stores, customers, products, sales, and returns. It organizes Snowflake transformations into bronze, silver, and gold layers and includes a Power BI semantic model and a Customer Demographics dashboard.</p>
               </details>
-              <p class="project-link-placeholder">Project page and GitHub links to add</p>
+              <p class="project-links">
+                <a href="https://github.com/rmmuthoni/data-modeling-with-dbt-snowflake-and-powerbi">View source on GitHub</a>
+                <a href="https://github.com/rmmuthoni/data-modeling-with-dbt-snowflake-and-powerbi#readme">Read project details</a>
+              </p>
             </div>
           </article>
 

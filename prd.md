@@ -109,7 +109,7 @@
 ## 14. Content dependencies and open items
 - The owner must supply a portrait, role, biography, a CV or LinkedIn reference, and an email address. Approved TikTok, LinkedIn, and GitHub profiles are provided.
 - The owner has supplied two experience entries. Further roles can be added as additional details are ready.
-- The owner must select four projects and supply descriptions, imagery, contributions, detail pages, and source links where available.
+- The owner supplied the public retail analytics project at [data-modeling-with-dbt-snowflake-and-powerbi](https://github.com/rmmuthoni/data-modeling-with-dbt-snowflake-and-powerbi); three more projects and any additional project imagery or contribution details remain to be supplied.
 - The owner must provide scratch-pad material and decide which experiments or works in progress to publish.
 - Palette, typography, exact visual style, and optional interaction remain implementation decisions.
 
