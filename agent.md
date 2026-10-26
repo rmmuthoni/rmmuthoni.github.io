@@ -24,10 +24,11 @@ This document defines the order an AI coding agent should follow when building o
 - Use an abstract data-point network that converges on a decision point to ground the analytics scene; avoid empty or generic dashboard filler.
 - Use the abstract connected-data background as a full-section background so it never reserves layout space.
 - Keep the hero focused on the introduction and call to action; put the technology icons in a “My Stack” section after the hero.
+- Place the GitHub, LinkedIn, X, and TikTok icons immediately below the hero call to action. Link approved profiles; keep the X mark as a non-linked placeholder until the owner supplies its profile URL.
 - Add a visible scroll cue. Use motion as a visual prompt, not as a promise of physical haptic feedback.
 
 ### My Stack
-- Present icons for Power BI, Apache Airflow, dbt, Python, Snowflake, databases, Azure Data Factory, Apache Kafka, Microsoft Excel, Google Sheets, and Qlik Sense/QlikView in a dedicated section after the hero.
+- Present icons for Power BI, Apache Airflow, dbt, Python, Snowflake, databases, Azure Data Factory, Apache Kafka, Microsoft Excel, Google Sheets, and Qlik Sense/QlikView in a seamless, right-to-left looping marquee. Duplicate decorative items must be hidden from assistive technology; honor reduced motion.
 
 ### Experience
 - Present career progression as a CV-style timeline or flow connected by an intuitive line.

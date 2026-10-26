@@ -6,7 +6,7 @@ This project is a personal portfolio website for presenting who I am, my career 
 
 1. **Navigation** — Sticky responsive flex layout with section links around a centered “My Stack” link. Collapse to an accessible hamburger menu when links no longer fit.
 2. **Hero** — Name, two professional titles, a concise introduction, and a portrait as a visible, swinging, draggable staff-ID/name tag over an abstract data-point network.
-3. **My Stack** — Technology icons for Power BI, Apache Airflow, dbt, Python, Snowflake, databases, Azure Data Factory, Apache Kafka, Microsoft Excel, Google Sheets, and Qlik Sense/QlikView.
+3. **My Stack** — A seamless right-to-left marquee of technology icons for Power BI, Apache Airflow, dbt, Python, Snowflake, databases, Azure Data Factory, Apache Kafka, Microsoft Excel, Google Sheets, and Qlik Sense/QlikView.
 4. **Experience** — CV-style timeline presenting the supplied Business Intelligence Analyst and Data Analytics Intern roles, dates, organizations, and responsibilities.
 5. **Projects** — Four featured previews with an image, short description, a link to fuller project details, and a GitHub/source link when available.
 6. **Scratch pad** — The creative process, such as an idea on paper, a BI dashboard sketch, and the realized work on a laptop. Identify unfinished work.
@@ -21,6 +21,7 @@ This project is a personal portfolio website for presenting who I am, my career 
 - Use readable typography, consistent spacing, a restrained personal color palette, and strong visual hierarchy.
 - Use Google Sans for body and display text, loaded from Google Fonts.
 - Keep the navigation sticky; layer the hero data illustration and lanyard so they do not reserve space above the introduction.
+- Show GitHub, LinkedIn, X, and TikTok icons directly below the hero's “Explore my work” button.
 - Show technology icons for Power BI, Apache Airflow, dbt, Python, Snowflake, databases, Azure Data Factory, Apache Kafka, Microsoft Excel, Google Sheets, and Qlik Sense/QlikView in the My Stack section.
 - Make project previews and experience entries quick to scan; use meaningful imagery and short descriptions rather than dense text.
 - Provide descriptive alt text for meaningful images, sufficient color contrast, and keyboard-accessible navigation.
@@ -46,10 +47,11 @@ Technology icons are stored locally in `assets/icons/`.
 
 ## Social profiles
 
-The approved profiles are linked in the contact section:
+GitHub, LinkedIn, and TikTok profiles are linked in the hero and contact sections. The X icon is shown in the hero; its profile URL still needs to be supplied.
 
 - GitHub: [rmmuthoni](https://github.com/rmmuthoni)
 - LinkedIn: [muthoni-rogers](https://www.linkedin.com/in/muthoni-rogers/)
+- X: `[profile URL to be supplied]`
 - TikTok: [@rmmuthoni](https://www.tiktok.com/@rmmuthoni)
 - Email: `[email address to be supplied]`
 

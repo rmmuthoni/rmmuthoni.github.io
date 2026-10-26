@@ -287,7 +287,7 @@ h1 {
   min-height: 3rem;
   align-items: center;
   justify-content: center;
-  margin-bottom: 1.35rem;
+  margin-bottom: 0.75rem;
   padding: 0.7rem 1.25rem;
   background: var(--teal);
   color: var(--white);
@@ -304,14 +304,63 @@ h1 {
   transform: translateY(0) scale(0.98);
 }
 
-.toolbox {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 0.7rem 1.25rem;
-  width: min(100%, 760px);
+.hero-socials {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
   margin: 0;
   padding: 0;
   list-style: none;
+}
+
+.hero-socials a,
+.hero-social-placeholder {
+  display: grid;
+  width: 2rem;
+  height: 2rem;
+  place-items: center;
+  color: var(--ink);
+  transition: color 180ms ease, transform 180ms ease;
+}
+
+.hero-socials a:hover {
+  color: var(--teal);
+  transform: translateY(-2px);
+}
+
+.hero-socials svg {
+  width: 1.3rem;
+  height: 1.3rem;
+}
+
+.hero-social-placeholder {
+  color: var(--muted);
+}
+
+.toolbox {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  gap: clamp(1.5rem, 4vw, 3.5rem);
+  margin: 0;
+  padding: 0 clamp(1.25rem, 3vw, 2.5rem);
+  list-style: none;
+}
+
+.stack-marquee {
+  width: 100%;
+  overflow: hidden;
+}
+
+.stack-track {
+  display: flex;
+  width: max-content;
+  animation: stack-scroll 34s linear infinite;
+}
+
+.stack-marquee:hover .stack-track,
+.stack-marquee:focus-within .stack-track {
+  animation-play-state: paused;
 }
 
 .toolbox li {
@@ -319,7 +368,7 @@ h1 {
   align-items: center;
   gap: 0.6rem;
   min-width: 0;
-  min-height: 2.5rem;
+  min-height: 4rem;
   color: var(--ink);
   font-size: 0.9rem;
   font-weight: 700;
@@ -356,6 +405,12 @@ h1 {
 
 .tool-icon--dbt {
   width: 3rem;
+}
+
+@keyframes stack-scroll {
+  to {
+    transform: translateX(-50%);
+  }
 }
 
 .lanyard {
@@ -1069,18 +1124,13 @@ summary:focus-visible {
     transform-origin: top right;
   }
 
-  .social-links {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 0.45rem;
-    max-width: 100%;
+  .toolbox {
+    gap: 1.25rem;
+    padding-inline: 1.25rem;
   }
 
   .toolbox li {
-    font-size: 0.72rem;
-  }
-
-  .toolbox li > span:last-child {
-    overflow-wrap: anywhere;
+    font-size: 0.8rem;
   }
 
   .nav-home {
@@ -1185,6 +1235,14 @@ summary:focus-visible {
 
   .hero-role-caret {
     animation: none;
+  }
+
+  .stack-track {
+    animation: none !important;
+  }
+
+  .toolbox--duplicate {
+    display: none;
   }
 
 }

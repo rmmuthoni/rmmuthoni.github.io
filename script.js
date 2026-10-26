@@ -45,6 +45,15 @@ if (year) {
   year.textContent = String(new Date().getFullYear());
 }
 
+const stackTrack = document.querySelector(".stack-track");
+const stackItems = stackTrack?.querySelector(".toolbox");
+if (stackTrack && stackItems) {
+  const duplicateItems = stackItems.cloneNode(true);
+  duplicateItems.classList.add("toolbox--duplicate");
+  duplicateItems.setAttribute("aria-hidden", "true");
+  stackTrack.append(duplicateItems);
+}
+
 const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 const roleText = document.querySelector("[data-role-text]");
 const roleAnnouncement = document.querySelector("[data-role-announcement]");

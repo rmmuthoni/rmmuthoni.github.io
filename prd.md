@@ -52,10 +52,11 @@
 - Use an abstract, connected data-point illustration that communicates how data relationships lead to informed decisions.
 - Introduce the owner as a data analytics and analytics engineering professional, with an approximately 30-word biography.
 - Keep the hero focused on the introduction and primary action; show technology icons in the My Stack section after the hero.
+- Place GitHub, LinkedIn, X, and TikTok icons directly below the primary action. Use supplied profile links; do not invent the X profile URL.
 - Include an obvious scroll cue that signals there is more content below.
 
 ### 8.3 My Stack
-- Present Power BI, Apache Airflow, dbt, Python, Snowflake, databases, Azure Data Factory, Apache Kafka, Microsoft Excel, Google Sheets, and Qlik Sense/QlikView icons in a clearly headed section immediately after the hero.
+- Present Power BI, Apache Airflow, dbt, Python, Snowflake, databases, Azure Data Factory, Apache Kafka, Microsoft Excel, Google Sheets, and Qlik Sense/QlikView icons in a seamless, right-to-left looping marquee immediately after the hero. Respect reduced-motion preferences and hide duplicated marquee content from assistive technology.
 
 ### 8.4 Experience
 - Show career progression as a readable CV-style timeline or flow connected by an intuitive line.
