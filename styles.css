@@ -1096,7 +1096,7 @@ summary:focus-visible {
   }
 
   .hero-intro,
-  h1 {
+  .hero h1 {
     max-width: 54%;
   }
 
@@ -1107,8 +1107,9 @@ summary:focus-visible {
     white-space: nowrap;
   }
 
-  h1 {
-    font-size: clamp(2.25rem, 10vw, 3.6rem);
+  .hero h1 {
+    max-width: 65%;
+    font-size: clamp(2.5rem, 11vw, 3.75rem);
   }
 
   .hero-description {
@@ -1217,6 +1218,12 @@ summary:focus-visible {
 
   .footer-note {
     grid-column: auto;
+  }
+}
+
+@media (max-width: 360px) {
+  .lanyard {
+    scale: 0.52;
   }
 }
 
