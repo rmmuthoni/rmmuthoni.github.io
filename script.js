@@ -67,8 +67,7 @@ if (lanyard && lanyardSwing) {
     frame: 0,
     lastTime: 0,
   };
-  const strapLeft = lanyardSwing.querySelector("#strap-left");
-  const strapRight = lanyardSwing.querySelector("#strap-right");
+  const strapCenter = lanyardSwing.querySelector("#strap-center");
   const strapStrokes = lanyardSwing.querySelectorAll(".lanyard-stroke");
 
   const clearRevealTimers = () => {
@@ -94,16 +93,13 @@ if (lanyard && lanyardSwing) {
     );
     lanyardSwing.style.setProperty("--strap-extension", `${spring.extension}px`);
 
-    if (strapLeft && strapRight) {
+    if (strapCenter) {
       const stretch = spring.extension;
-      const leftPath =
-        `M66 -8 C ${83 + stretch * 0.12} ${42 + stretch * 0.28} ${96 + stretch * 0.55} ${100 + stretch * 0.68} ${119} ${178 + stretch}`;
-      const rightPath =
-        `M174 -8 C ${157 - stretch * 0.12} ${42 + stretch * 0.28} ${144 - stretch * 0.55} ${100 + stretch * 0.68} ${121} ${178 + stretch}`;
-      strapLeft.setAttribute("d", leftPath);
-      strapRight.setAttribute("d", rightPath);
+      const path =
+        `M120 -8 C ${120 + stretch * 0.08} ${42 + stretch * 0.28} ${120 - stretch * 0.06} ${100 + stretch * 0.68} 120 ${178 + stretch}`;
+      strapCenter.setAttribute("d", path);
       strapStrokes.forEach((stroke) => {
-        stroke.setAttribute("d", `${leftPath} ${rightPath}`);
+        stroke.setAttribute("d", path);
       });
     }
   };
@@ -180,7 +176,7 @@ if (lanyard && lanyardSwing) {
     const bounds = lanyard.getBoundingClientRect();
     const x = Math.max(-1, Math.min(1, (event.clientX - bounds.left) / bounds.width * 2 - 1));
     pointerHover = true;
-    spring.targetAngle = x * 0.035;
+    spring.targetAngle = -x * 0.035;
     startSpring();
   };
 
@@ -205,7 +201,7 @@ if (lanyard && lanyardSwing) {
     spring.targetAngle = 0;
     spring.targetExtension = 0;
     spring.maxExtension = releasedDrag.maxExtension;
-    spring.velocity += releasedDrag.velocityX * 0.35;
+    spring.velocity -= releasedDrag.velocityX * 0.35;
     spring.extensionVelocity = Math.max(
       -1600,
       Math.min(1600, releasedDrag.velocityY * 0.45),
@@ -268,7 +264,7 @@ if (lanyard && lanyardSwing) {
     const rawY = event.clientY - drag.startY;
     spring.targetAngle = Math.max(
       -0.3,
-      Math.min(0.3, drag.originAngle + rawX / drag.dragLength),
+      Math.min(0.3, drag.originAngle - rawX / drag.dragLength),
     );
     spring.targetExtension = Math.min(
       drag.maxExtension,
