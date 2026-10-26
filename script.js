@@ -60,9 +60,16 @@ if (lanyard && lanyardSwing) {
     angle: 0,
     velocity: 0,
     targetAngle: 0,
+    extension: 0,
+    extensionVelocity: 0,
+    targetExtension: 0,
+    maxExtension: Infinity,
     frame: 0,
     lastTime: 0,
   };
+  const strapLeft = lanyardSwing.querySelector("#strap-left");
+  const strapRight = lanyardSwing.querySelector("#strap-right");
+  const strapStrokes = lanyardSwing.querySelectorAll(".lanyard-stroke");
 
   const clearRevealTimers = () => {
     window.clearTimeout(revealTimer);
@@ -85,12 +92,29 @@ if (lanyard && lanyardSwing) {
       "--swing-angle",
       `${spring.angle * 180 / Math.PI}deg`,
     );
+    lanyardSwing.style.setProperty("--strap-extension", `${spring.extension}px`);
+
+    if (strapLeft && strapRight) {
+      const stretch = spring.extension;
+      const leftPath =
+        `M66 -8 C ${83 + stretch * 0.12} ${42 + stretch * 0.28} ${96 + stretch * 0.55} ${100 + stretch * 0.68} ${119} ${178 + stretch}`;
+      const rightPath =
+        `M174 -8 C ${157 - stretch * 0.12} ${42 + stretch * 0.28} ${144 - stretch * 0.55} ${100 + stretch * 0.68} ${121} ${178 + stretch}`;
+      strapLeft.setAttribute("d", leftPath);
+      strapRight.setAttribute("d", rightPath);
+      strapStrokes.forEach((stroke) => {
+        stroke.setAttribute("d", `${leftPath} ${rightPath}`);
+      });
+    }
   };
 
   const settleWithoutMotion = () => {
     spring.angle = 0;
     spring.velocity = 0;
     spring.targetAngle = 0;
+    spring.extension = 0;
+    spring.extensionVelocity = 0;
+    spring.targetExtension = 0;
     drawSwing();
   };
 
@@ -111,8 +135,25 @@ if (lanyard && lanyardSwing) {
         ? (spring.targetAngle - spring.angle) * 80 - spring.velocity * 17
         : -13 * Math.sin(spring.angle) - 1.5 * spring.velocity +
           0.16 * Math.sin(time * 0.00075);
+      const extensionAcceleration = drag
+        ? (spring.targetExtension - spring.extension) * 180 - spring.extensionVelocity * 24
+        : -82 * spring.extension - 8.5 * spring.extensionVelocity;
       spring.velocity += acceleration * step;
       spring.angle += spring.velocity * step;
+      spring.extensionVelocity += extensionAcceleration * step;
+      spring.extension += spring.extensionVelocity * step;
+      if (spring.extension < 0) {
+        spring.extension = 0;
+        if (spring.extensionVelocity < 0) {
+          spring.extensionVelocity *= -0.36;
+        }
+      }
+      if (spring.extension > spring.maxExtension) {
+        spring.extension = spring.maxExtension;
+        if (spring.extensionVelocity > 0) {
+          spring.extensionVelocity *= -0.36;
+        }
+      }
     }
 
     drawSwing();
@@ -153,7 +194,8 @@ if (lanyard && lanyardSwing) {
       return;
     }
 
-    const wasDragged = drag.moved;
+    const releasedDrag = drag;
+    const wasDragged = releasedDrag.moved;
     drag = null;
     lanyard.classList.remove("is-dragging");
     if (lanyard.hasPointerCapture(event.pointerId)) {
@@ -161,6 +203,13 @@ if (lanyard && lanyardSwing) {
     }
 
     spring.targetAngle = 0;
+    spring.targetExtension = 0;
+    spring.maxExtension = releasedDrag.maxExtension;
+    spring.velocity += releasedDrag.velocityX * 0.35;
+    spring.extensionVelocity = Math.max(
+      -1600,
+      Math.min(1600, releasedDrag.velocityY * 0.45),
+    );
     if (!cancelled && !wasDragged) {
       interruptIntroduction();
       flipLanyard();
@@ -176,13 +225,27 @@ if (lanyard && lanyardSwing) {
     interruptIntroduction();
     pointerHover = false;
     const scale = Number.parseFloat(getComputedStyle(lanyard).scale) || 1;
+    const cardBounds = lanyard.querySelector(".lanyard-card").getBoundingClientRect();
     drag = {
       pointerId: event.pointerId,
       startX: event.clientX,
+      lastX: event.clientX,
+      startY: event.clientY,
       originAngle: spring.angle,
+      originExtension: spring.extension,
       dragLength: 400 * scale,
+      scale,
+      maxExtension: spring.extension + Math.max(
+        0,
+        (window.innerHeight - 12 - cardBounds.bottom) / scale,
+      ),
+      lastY: event.clientY,
+      lastTime: event.timeStamp,
+      velocityX: 0,
+      velocityY: 0,
       moved: false,
     };
+    spring.maxExtension = drag.maxExtension;
     lanyard.classList.add("is-dragging");
     if (spring.frame) {
       window.cancelAnimationFrame(spring.frame);
@@ -202,14 +265,29 @@ if (lanyard && lanyardSwing) {
     }
 
     const rawX = event.clientX - drag.startX;
+    const rawY = event.clientY - drag.startY;
     spring.targetAngle = Math.max(
       -0.3,
       Math.min(0.3, drag.originAngle + rawX / drag.dragLength),
     );
-    drag.moved ||= Math.abs(rawX) > 7;
+    spring.targetExtension = Math.min(
+      drag.maxExtension,
+      Math.max(0, drag.originExtension + rawY / drag.scale),
+    );
+
+    const elapsed = event.timeStamp - drag.lastTime;
+    if (elapsed > 0) {
+      drag.velocityX = (event.clientX - drag.lastX) / elapsed * 1000 / drag.dragLength;
+      drag.velocityY = (event.clientY - drag.lastY) / elapsed * 1000 / drag.scale;
+      drag.lastX = event.clientX;
+      drag.lastY = event.clientY;
+      drag.lastTime = event.timeStamp;
+    }
+    drag.moved ||= Math.hypot(rawX, rawY) > 7;
 
     if (reducedMotion.matches) {
       spring.angle = spring.targetAngle;
+      spring.extension = spring.targetExtension;
       drawSwing();
     } else {
       startSpring();
@@ -222,9 +300,8 @@ if (lanyard && lanyardSwing) {
   lanyard.addEventListener("pointerleave", () => {
     if (!drag) {
       pointerHover = false;
-      spring.targetAngle = 0;
       startSpring();
-    }
+    };
   });
   lanyard.addEventListener("keydown", (event) => {
     if ((event.key === "Enter" || event.key === " ") && !event.repeat) {
