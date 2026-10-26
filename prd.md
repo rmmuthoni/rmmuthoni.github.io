@@ -51,11 +51,11 @@
 - Let the lanyard swing, respond to pointer hover, and support bounded elastic dragging with a naturally lagging badge; respect reduced-motion preferences.
 - Use an abstract, connected data-point illustration that communicates how data relationships lead to informed decisions.
 - Introduce the owner as a data analytics and analytics engineering professional, with an approximately 30-word biography.
-- Keep the hero focused on the introduction and primary action; show linked GitHub, LinkedIn, and TikTok icons in the My Stack section after the hero. Include an email link only when an address is supplied.
+- Keep the hero focused on the introduction and primary action; show technology icons in the My Stack section after the hero.
 - Include an obvious scroll cue that signals there is more content below.
 
 ### 8.3 My Stack
-- Present linked GitHub, LinkedIn, and TikTok icons in a smooth, looping right-to-left marquee immediately after the hero. Pause it on hover/focus and respect reduced motion. Keep the email address as a placeholder until supplied.
+- Present Power BI, Apache Airflow, dbt, Python, Snowflake, databases, Azure Data Factory, Apache Kafka, Microsoft Excel, Google Sheets, and Qlik Sense/QlikView icons in a clearly headed section immediately after the hero.
 
 ### 8.4 Experience
 - Show career progression as a readable CV-style timeline or flow connected by an intuitive line.

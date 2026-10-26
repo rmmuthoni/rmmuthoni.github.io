@@ -45,18 +45,6 @@ if (year) {
   year.textContent = String(new Date().getFullYear());
 }
 
-const socialTrack = document.querySelector(".social-track");
-const socialLinks = socialTrack?.querySelector(".social-links");
-if (socialTrack && socialLinks) {
-  const duplicateLinks = socialLinks.cloneNode(true);
-  duplicateLinks.classList.add("social-links--duplicate");
-  duplicateLinks.setAttribute("aria-hidden", "true");
-  duplicateLinks.querySelectorAll("a").forEach((link) => {
-    link.setAttribute("tabindex", "-1");
-  });
-  socialTrack.append(duplicateLinks);
-}
-
 const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 const roleText = document.querySelector("[data-role-text]");
 const roleAnnouncement = document.querySelector("[data-role-announcement]");

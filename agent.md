@@ -23,11 +23,11 @@ This document defines the order an AI coding agent should follow when building o
 - Display the portrait as a staff-ID/name tag on an animated, bounded draggable lanyard; keep it visible below the sticky header on phones.
 - Use an abstract data-point network that converges on a decision point to ground the analytics scene; avoid empty or generic dashboard filler.
 - Use the abstract connected-data background as a full-section background so it never reserves layout space.
-- Keep the hero focused on the introduction and call to action; put the GitHub, LinkedIn, and TikTok profile links in the “My Stack” section after the hero.
+- Keep the hero focused on the introduction and call to action; put the technology icons in a “My Stack” section after the hero.
 - Add a visible scroll cue. Use motion as a visual prompt, not as a promise of physical haptic feedback.
 
 ### My Stack
-- Present linked GitHub, LinkedIn, and TikTok icons in a smooth, looping right-to-left marquee in a dedicated section after the hero. Pause it on hover/focus and respect reduced motion. Keep email as a placeholder until the owner supplies an address.
+- Present icons for Power BI, Apache Airflow, dbt, Python, Snowflake, databases, Azure Data Factory, Apache Kafka, Microsoft Excel, Google Sheets, and Qlik Sense/QlikView in a dedicated section after the hero.
 
 ### Experience
 - Present career progression as a CV-style timeline or flow connected by an intuitive line.
