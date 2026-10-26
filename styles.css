@@ -2,6 +2,9 @@
   color-scheme: light;
   --paper: #f4f2ec;
   --paper-deep: #ebe8de;
+  --experience-background: var(--paper-deep);
+  --header-background: var(--experience-background);
+  --stack-background: #e4e9df;
   --ink: #182a2a;
   --muted: #647270;
   --teal: #185c57;
@@ -75,7 +78,7 @@ img {
   z-index: 10;
   width: 100%;
   padding: 1rem var(--page-gutter);
-  background: var(--paper);
+  background: var(--header-background);
 }
 
 .site-nav {
@@ -377,6 +380,7 @@ h1 {
 .stack {
   padding-top: 5rem;
   padding-bottom: 5.5rem;
+  background: var(--stack-background);
 }
 
 .stack-inner {
@@ -649,7 +653,7 @@ h1 {
   padding-inline: 0;
   padding-top: 7rem;
   padding-bottom: 7rem;
-  background: var(--paper-deep);
+  background: var(--experience-background);
 }
 
 .experience-inner,
@@ -1030,7 +1034,7 @@ summary:focus-visible {
     gap: 0.15rem;
     padding: 0.6rem 1rem;
     border: 1px solid var(--line);
-    background: var(--paper);
+    background: var(--header-background);
   }
 
   .mobile-menu a {
@@ -1109,7 +1113,7 @@ summary:focus-visible {
 
   .hero h1 {
     max-width: 65%;
-    font-size: clamp(3.5rem, 16vw, 5rem);
+    font-size: clamp(3.75rem, 17vw, 4.75rem);
   }
 
   .hero-description {
