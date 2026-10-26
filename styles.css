@@ -310,6 +310,21 @@ h1 {
   list-style: none;
 }
 
+.stack {
+  padding-top: 5rem;
+  padding-bottom: 5.5rem;
+}
+
+.stack-inner {
+  width: 100%;
+  max-width: var(--page-width);
+  margin-inline: auto;
+}
+
+.stack .section-heading {
+  margin-bottom: 2.25rem;
+}
+
 .toolbox li {
   display: flex;
   align-items: center;
@@ -390,11 +405,11 @@ h1 {
 
 .lanyard-hardware {
   position: absolute;
-  top: calc(169px + var(--strap-extension, 0px));
+  top: 169px;
   left: 50%;
   width: 48px;
   height: 55px;
-  transform: translateX(-50%);
+  transform: translateX(-50%) translateY(var(--strap-extension, 0px));
 }
 
 .lanyard-crimp {
@@ -433,11 +448,15 @@ h1 {
 
 .lanyard-card {
   position: absolute;
-  top: calc(221px + var(--strap-extension, 0px));
+  top: 221px;
   left: 50%;
   width: 168px;
   height: 220px;
-  transform: translateX(-50%);
+  transform:
+    translateX(-50%)
+    translateY(var(--strap-extension, 0px))
+    rotate(var(--card-angle, 0deg));
+  transform-origin: 50% 0;
   perspective: 800px;
 }
 
@@ -972,7 +991,7 @@ summary:focus-visible {
   }
 
   .lanyard {
-    top: calc(-1 * var(--header-height));
+    top: 0.5rem;
     scale: 0.78;
     right: clamp(1rem, 5vw, 3rem);
     transform-origin: top right;
@@ -1013,24 +1032,31 @@ summary:focus-visible {
 
   .hero-copy {
     width: 100%;
-    padding-top: 0;
+    padding-top: 7.5rem;
+  }
+
+  .hero-intro,
+  h1 {
+    max-width: 60%;
   }
 
   h1 {
-    max-width: 68%;
-    font-size: clamp(2.4rem, 11.5vw, 3.4rem);
+    font-size: clamp(2.25rem, 10.5vw, 3.4rem);
   }
 
-  .hero-role,
+  .hero-role {
+    max-width: 60%;
+  }
+
   .hero-description {
     max-width: 100%;
   }
 
   .lanyard {
-    top: calc(-1 * var(--header-height));
-    right: 0.25rem;
+    top: 0.5rem;
+    right: 0;
     left: auto;
-    scale: 0.38;
+    scale: clamp(0.48, 15vw, 0.62);
     translate: 0 0;
     transform-origin: top right;
   }

@@ -14,17 +14,20 @@ This document defines the order an AI coding agent should follow when building o
 
 ### Navigation
 - Build the sticky header first using a flex layout that adapts from laptop to tablet to phone.
-- On wider layouts, arrange section links on both sides of a centered, circular portrait that serves as the Home link.
+- On wider layouts, arrange section links on both sides of a centered “My Stack” link; keep the owner's name in the hero.
 - When links no longer fit, collapse them into an accessible hamburger menu with a clear name, state, keyboard operation, focus treatment, and close behavior.
 - Keep destinations consistent with real section IDs; prevent overflow and preserve a logical reading order.
 
 ### Hero
 - Introduce the owner as “Muthoni, Rogers,” with the supplied Data Analytics and Analytics Engineering titles and short biography.
-- Display the portrait in the navigation and as a staff-ID/name tag on an animated, bounded draggable lanyard.
+- Display the portrait as a staff-ID/name tag on an animated, bounded draggable lanyard; keep it visible below the sticky header on phones.
 - Use an abstract data-point network that converges on a decision point to ground the analytics scene; avoid empty or generic dashboard filler.
 - Use the abstract connected-data background as a full-section background so it never reserves layout space.
-- Show the supplied technology toolbox below the introduction; put social profile links in the contact section.
+- Keep the hero focused on the introduction and call to action; put the supplied technology icons in a dedicated “My Stack” section after the hero.
 - Add a visible scroll cue. Use motion as a visual prompt, not as a promise of physical haptic feedback.
+
+### My Stack
+- Present the supplied technology icons in a dedicated, clearly headed section after the hero.
 
 ### Experience
 - Present career progression as a CV-style timeline or flow connected by an intuitive line.
@@ -46,7 +49,7 @@ This document defines the order an AI coding agent should follow when building o
 
 ## Quality checks
 
-- Check that Navigation, Hero, Experience, Projects, Scratch Pad, Contact, and Footer appear in order and are reachable.
+- Check that Navigation, Hero, My Stack, Experience, Projects, Scratch Pad, Contact, and Footer appear in order and are reachable.
 - Check flex navigation and the hamburger at laptop, tablet, and phone widths; prevent clipping and horizontal overflow.
 - Use semantic HTML, descriptive alternatives for meaningful images, visible keyboard focus, and sufficient contrast.
 - Keep essential content available without JavaScript; respect reduced-motion preferences for lanyard and scroll-cue motion.

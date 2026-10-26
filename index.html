@@ -29,8 +29,8 @@
           <a href="#projects">Projects</a>
         </div>
 
-        <a class="nav-home" href="#top" aria-label="Muthoni, Rogers — home">
-          Muthoni, Rogers
+        <a class="nav-home" href="#stack">
+          My Stack
         </a>
 
         <div class="nav-side nav-side--right">
@@ -51,6 +51,7 @@
       </nav>
 
       <nav class="mobile-menu" id="mobile-menu" aria-label="Mobile navigation" hidden>
+        <a href="#stack">My Stack</a>
         <a href="#experience">Experience</a>
         <a href="#projects">Projects</a>
         <a href="#scratch-pad">Scratch pad</a>
@@ -65,7 +66,7 @@
           role="button"
           tabindex="0"
           aria-pressed="false"
-          aria-label="Interactive ID badge. Drag to swing or click to flip."
+          aria-label="Interactive ID badge. Drag or pull to swing and stretch it; activate to flip."
         >
           <div class="lanyard-swing">
             <svg class="lanyard-webbing" viewBox="0 0 240 210" aria-hidden="true">
@@ -139,7 +140,21 @@
           </p>
           <a class="hero-action" href="#projects">Explore my work</a>
 
-          <ul class="toolbox" aria-label="Technology toolbox">
+        </div>
+
+        <a class="scroll-cue" href="#stack">
+          <span>Scroll to explore</span>
+          <span class="scroll-cue-mark" aria-hidden="true"></span>
+        </a>
+      </section>
+
+      <section class="stack section-shell" id="stack" aria-labelledby="stack-title">
+        <div class="stack-inner">
+          <div class="section-heading">
+            <h2 id="stack-title">My Stack</h2>
+            <p>Tools I use to shape reliable data and turn it into useful reporting.</p>
+          </div>
+          <ul class="toolbox" aria-label="Technologies in my stack">
             <li>
               <span class="tool-icon tool-icon--powerbi" aria-hidden="true">
                 <img src="assets/icons/power-bi.svg" alt="">
@@ -190,11 +205,6 @@
             </li>
           </ul>
         </div>
-
-        <a class="scroll-cue" href="#experience">
-          <span>Scroll to explore</span>
-          <span class="scroll-cue-mark" aria-hidden="true"></span>
-        </a>
       </section>
 
       <section class="experience section-shell" id="experience" aria-labelledby="experience-title">

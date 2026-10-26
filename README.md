@@ -4,18 +4,19 @@ This project is a personal portfolio website for presenting who I am, my career 
 
 ## Planned sections
 
-1. **Navigation** — Sticky responsive flex layout with section links around a centered circular portrait that also links home. Collapse to an accessible hamburger menu when links no longer fit.
-2. **Hero** — Name, two professional titles, a concise introduction, and toolbox icons for Power BI, Apache Airflow, dbt, Python, Snowflake, databases, Azure Data Factory, and Apache Kafka. The portrait appears as a staff-ID/name tag on a swinging, draggable lanyard over an abstract data-point network.
-3. **Experience** — CV-style timeline presenting the supplied Business Intelligence Analyst and Data Analytics Intern roles, dates, organizations, and responsibilities.
-4. **Projects** — Four featured previews with an image, short description, a link to fuller project details, and a GitHub/source link when available.
-5. **Scratch pad** — The creative process, such as an idea on paper, a BI dashboard sketch, and the realized work on a laptop. Identify unfinished work.
-6. **Contact** — A clear invitation to connect with approved email and social profile links.
-7. **Footer** — Copyright or attribution and a link back to the top.
+1. **Navigation** — Sticky responsive flex layout with section links around a centered “My Stack” link. Collapse to an accessible hamburger menu when links no longer fit.
+2. **Hero** — Name, two professional titles, a concise introduction, and a portrait as a visible, swinging, draggable staff-ID/name tag over an abstract data-point network.
+3. **My Stack** — Technology icons for Power BI, Apache Airflow, dbt, Python, Snowflake, databases, Azure Data Factory, and Apache Kafka.
+4. **Experience** — CV-style timeline presenting the supplied Business Intelligence Analyst and Data Analytics Intern roles, dates, organizations, and responsibilities.
+5. **Projects** — Four featured previews with an image, short description, a link to fuller project details, and a GitHub/source link when available.
+6. **Scratch pad** — The creative process, such as an idea on paper, a BI dashboard sketch, and the realized work on a laptop. Identify unfinished work.
+7. **Contact** — A clear invitation to connect with approved email and social profile links.
+8. **Footer** — Copyright or attribution and a link back to the top.
 
 ## Layout and visual direction
 
 - Use a responsive single-page layout with navigation linking to section anchors.
-- Present sections in this order: hero, experience, projects, scratch pad, and contact.
+- Present sections in this order: hero, My Stack, experience, projects, scratch pad, and contact.
 - Use a flex-based header that adapts from laptop to tablet to phone; use the hamburger when the links no longer fit.
 - Use readable typography, consistent spacing, a restrained personal color palette, and strong visual hierarchy.
 - Use Google Sans for body and display text, loaded from Google Fonts.

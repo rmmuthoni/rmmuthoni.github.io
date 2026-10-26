@@ -15,7 +15,7 @@
 
 ## 4. Goals and success criteria
 - Visitors can identify who the owner is and what they do from the opening section.
-- Visitors can reach experience, projects, scratch work, and contact; project entries explain the work, role, tools, or outcomes.
+- Visitors can reach the stack, experience, projects, scratch work, and contact; project entries explain the work, role, tools, or outcomes.
 - The layout remains readable on phones, tablets, and desktop screens, with content and links accessible by keyboard and assistive technology.
 - Content can be updated without redesigning the information architecture.
 - The site and its local assets can be published and checked using GitHub Pages.
@@ -30,8 +30,8 @@
 - Find professional profiles and an email contact link.
 
 ## 7. Scope and priorities
-- **Must have:** Responsive portfolio layout with Navigation, Hero, Experience, Projects, Scratch Pad, Contact, and Footer sections.
-- **Must have:** Flex-based navigation adapting from laptop to tablet and phone, with section links flanking a centered circular home portrait on wide layouts and an accessible hamburger when links do not fit.
+- **Must have:** Responsive portfolio layout with Navigation, Hero, My Stack, Experience, Projects, Scratch Pad, Contact, and Footer sections.
+- **Must have:** Flex-based navigation adapting from laptop to tablet and phone, with section links flanking a centered My Stack link on wide layouts and an accessible hamburger when links do not fit.
 - **Must have:** Four featured project previews and a clear route to fuller project details and imagery when available.
 - **Must have:** Scannable project and experience content with accessible navigation, meaningful image alternatives, and readable color contrast.
 - **Should have:** Project imagery, live project links, source-code links, and downloadable documents when supplied.
@@ -42,37 +42,40 @@
 
 ## 8. Information architecture and core features
 ### 8.1 Navigation
-- Arrange links around a circular portrait/home link on wide screens; keep the header sticky and adapt the flex layout across devices without clipping.
+- Arrange section links around a centered “My Stack” link on wide screens; keep the header sticky and adapt the flex layout across devices without clipping.
 - Collapse links into a keyboard-accessible hamburger when they cannot fit; provide clear open, close, and focus states.
 
 ### 8.2 Hero
 - Introduce the owner with the provisional display name “Muthoni, Rogers,” role, and concise biography; use clearly marked editable placeholders until approved.
-- Feature a circular owner portrait in the sticky navigation and as a staff ID/name tag hanging from a lanyard.
-- Let the lanyard swing, respond to pointer hover, and support bounded elastic dragging; respect reduced-motion preferences.
+- Feature the owner portrait as a staff ID/name tag hanging from a lanyard that stays visible below the sticky navigation on phones.
+- Let the lanyard swing, respond to pointer hover, and support bounded elastic dragging with a naturally lagging badge; respect reduced-motion preferences.
 - Use an abstract, connected data-point illustration that communicates how data relationships lead to informed decisions.
 - Introduce the owner as a data analytics and analytics engineering professional, with an approximately 30-word biography.
-- Show Power BI, Apache Airflow, dbt, Python, Snowflake, databases, Azure Data Factory, and Apache Kafka in the hero toolbox; keep social profile links in the contact section.
+- Keep the hero focused on the introduction and primary action; show Power BI, Apache Airflow, dbt, Python, Snowflake, databases, Azure Data Factory, and Apache Kafka in a dedicated My Stack section after the hero.
 - Include an obvious scroll cue that signals there is more content below.
 
-### 8.3 Experience
+### 8.3 My Stack
+- Present the supplied technology icons in a dedicated, clearly headed section immediately after the hero.
+
+### 8.4 Experience
 - Show career progression as a readable CV-style timeline or flow connected by an intuitive line.
 - Include role, organization, dates, supplied responsibilities or outcomes, and company logos where available; retain text labels for each organization.
 
-### 8.4 Projects
+### 8.5 Projects
 - Feature four project previews with images, titles, short descriptions, and links to fuller details when available.
 - Include a GitHub/source link when one exists; distinguish project-detail and source-code actions.
 - Never invent project facts, links, or outcomes; label temporary sample content as placeholder content.
 
-### 8.5 Scratch pad
+### 8.6 Scratch pad
 - Showcase the making process, for example: rough paper idea, BI dashboard sketch, then implemented work shown on a laptop.
 - Explain each stage with a short caption; identify experiments or unfinished work clearly.
 
-### 8.6 Contact and footer
+### 8.7 Contact and footer
 - Provide a clear invitation to connect, approved email and profile links, attribution, and a back-to-top link.
 - Do not present example contact information as real owner details.
 
 ## 9. Navigation and interaction
-- Navigation links lead to the relevant page sections; the central portrait/home link returns to the top.
+- Navigation links lead to the relevant page sections; the centered “My Stack” link replaces the name in the navigation and links to the My Stack section.
 - Provide visible interaction and focus states, and keep essential content available without JavaScript.
 - Use motion sparingly for the lanyard and scroll cue; honor reduced-motion preferences.
 - A browser cannot guarantee physical haptic feedback, so the scroll prompt must communicate visually without requiring vibration.
@@ -97,7 +100,7 @@
 - Document publishing instructions in the project README as implementation evolves.
 
 ## 13. Acceptance criteria
-- Navigation, hero, experience, projects, scratch pad, contact, and footer exist in the specified order.
+- Navigation, hero, My Stack, experience, projects, scratch pad, contact, and footer exist in the specified order.
 - The center portrait acts as a home link; the sticky navigation flexes responsively and exposes a usable hamburger when needed. On mobile, the hamburger is left and portrait is right at matching dimensions.
 - Hero content introduces the owner, presents a data-network background, toolbox icons, and a visible scroll invitation without reserving space for the background or lanyard.
 - Experience presents the two supplied roles and responsibilities; four project previews link to available details and source code.

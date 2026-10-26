@@ -121,6 +121,8 @@ if (lanyard && lanyardSwing) {
     angle: 0,
     velocity: 0,
     targetAngle: 0,
+    cardAngle: 0,
+    cardVelocity: 0,
     extension: 0,
     extensionVelocity: 0,
     targetExtension: 0,
@@ -152,12 +154,17 @@ if (lanyard && lanyardSwing) {
       "--swing-angle",
       `${spring.angle * 180 / Math.PI}deg`,
     );
+    lanyardSwing.style.setProperty(
+      "--card-angle",
+      `${spring.cardAngle * 180 / Math.PI}deg`,
+    );
     lanyardSwing.style.setProperty("--strap-extension", `${spring.extension}px`);
 
     if (strapCenter) {
       const stretch = spring.extension;
+      const sway = Math.sin(spring.angle) * 16;
       const path =
-        `M120 -8 C ${120 + stretch * 0.08} ${42 + stretch * 0.28} ${120 - stretch * 0.06} ${100 + stretch * 0.68} 120 ${178 + stretch}`;
+        `M120 -8 C ${120 + sway * 0.35 + stretch * 0.08} ${42 + stretch * 0.28} ${120 + sway - stretch * 0.06} ${100 + stretch * 0.68} 120 ${178 + stretch}`;
       strapCenter.setAttribute("d", path);
       strapStrokes.forEach((stroke) => {
         stroke.setAttribute("d", path);
@@ -169,6 +176,8 @@ if (lanyard && lanyardSwing) {
     spring.angle = 0;
     spring.velocity = 0;
     spring.targetAngle = 0;
+    spring.cardAngle = 0;
+    spring.cardVelocity = 0;
     spring.extension = 0;
     spring.extensionVelocity = 0;
     spring.targetExtension = 0;
@@ -197,6 +206,10 @@ if (lanyard && lanyardSwing) {
         : -82 * spring.extension - 8.5 * spring.extensionVelocity;
       spring.velocity += acceleration * step;
       spring.angle += spring.velocity * step;
+      const cardAcceleration =
+        (-spring.angle * 0.32 - spring.cardAngle) * 48 - spring.cardVelocity * 12;
+      spring.cardVelocity += cardAcceleration * step;
+      spring.cardAngle += spring.cardVelocity * step;
       spring.extensionVelocity += extensionAcceleration * step;
       spring.extension += spring.extensionVelocity * step;
       if (spring.extension < 0) {
