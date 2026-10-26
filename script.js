@@ -45,10 +45,71 @@ if (year) {
   year.textContent = String(new Date().getFullYear());
 }
 
+const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+const roleText = document.querySelector("[data-role-text]");
+const roleAnnouncement = document.querySelector("[data-role-announcement]");
+if (roleText instanceof HTMLElement && roleAnnouncement instanceof HTMLElement) {
+  const roles = [
+    "Data Analyst",
+    "Business Intelligence Analyst",
+    "Analytics Engineer",
+  ];
+  const typeDelay = 85;
+  const deleteDelay = 42;
+  const holdDelay = 1500;
+  let roleIndex = 0;
+  let characterIndex = roleText.textContent.length;
+  let deleting = true;
+  let roleTimer = 0;
+
+  const animateRole = () => {
+    if (reducedMotion.matches) {
+      return;
+    }
+
+    const currentRole = roles[roleIndex];
+    characterIndex += deleting ? -1 : 1;
+    roleText.textContent = currentRole.slice(0, characterIndex);
+
+    if (!deleting && characterIndex === currentRole.length) {
+      roleAnnouncement.textContent = currentRole;
+      deleting = true;
+      roleTimer = window.setTimeout(animateRole, holdDelay);
+      return;
+    }
+
+    if (deleting && characterIndex === 0) {
+      deleting = false;
+      roleIndex = (roleIndex + 1) % roles.length;
+    }
+
+    roleTimer = window.setTimeout(
+      animateRole,
+      deleting ? deleteDelay : typeDelay,
+    );
+  };
+
+  if (!reducedMotion.matches) {
+    roleTimer = window.setTimeout(animateRole, 1800);
+  }
+
+  reducedMotion.addEventListener("change", () => {
+    window.clearTimeout(roleTimer);
+    if (reducedMotion.matches) {
+      roleText.textContent = roles[0];
+      roleAnnouncement.textContent = "";
+    } else {
+      roleIndex = 0;
+      characterIndex = roles[0].length;
+      deleting = true;
+      roleTimer = window.setTimeout(animateRole, 1800);
+    }
+  });
+}
+
 const lanyard = document.querySelector(".lanyard");
 const lanyardSwing = lanyard?.querySelector(".lanyard-swing");
 const finePointer = window.matchMedia("(hover: hover) and (pointer: fine)");
-const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 
 if (lanyard && lanyardSwing) {
   let drag = null;
