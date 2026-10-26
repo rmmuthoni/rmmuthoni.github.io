@@ -27,6 +27,7 @@ html {
 
 body {
   margin: 0;
+  overflow-x: clip;
   background: var(--paper);
   color: var(--ink);
   font-family: var(--font-body);
@@ -170,7 +171,7 @@ img {
   max-width: none;
   min-height: calc(100vh - var(--header-height));
   min-height: calc(100svh - var(--header-height));
-  overflow: clip;
+  overflow: visible;
   padding-inline: clamp(1.5rem, 6vw, 6.5rem);
   padding-top: clamp(1.75rem, 4vh, 3.25rem);
   padding-bottom: 4.5rem;
@@ -321,17 +322,18 @@ h1 {
 .lanyard {
   position: absolute;
   z-index: 3;
-  top: 50%;
+  top: calc(-1 * var(--header-height));
   right: clamp(2rem, 4vw, 4rem);
   width: 260px;
   height: 490px;
   perspective: 1000px;
-  translate: 0 -50%;
+  translate: 0 0;
   touch-action: none;
   cursor: grab;
   user-select: none;
   -webkit-user-select: none;
   transform-origin: 50% 0;
+  scale: 1.18;
   will-change: transform;
 }
 
@@ -368,8 +370,8 @@ h1 {
 
 .lanyard-hardware {
   position: absolute;
-  top: calc(169px + var(--swing-y, 0px));
-  left: calc(50% + var(--swing-x, 0px));
+  top: 169px;
+  left: 50%;
   width: 48px;
   height: 55px;
   transform: translateX(-50%);
@@ -411,8 +413,8 @@ h1 {
 
 .lanyard-card {
   position: absolute;
-  top: calc(221px + var(--swing-y, 0px));
-  left: calc(50% + var(--swing-x, 0px));
+  top: 221px;
+  left: 50%;
   width: 168px;
   height: 220px;
   transform: translateX(-50%);
@@ -876,6 +878,13 @@ summary:focus-visible {
   }
 }
 
+@media (min-width: 901px) and (max-width: 1100px) {
+  .lanyard {
+    right: 0;
+    scale: 1;
+  }
+}
+
 @media (max-width: 900px) {
   .site-nav {
     justify-content: space-between;
@@ -945,7 +954,7 @@ summary:focus-visible {
   }
 
   .lanyard {
-    top: 50%;
+    top: calc(-1 * var(--header-height));
     scale: 0.78;
     right: clamp(1rem, 5vw, 3rem);
     transform-origin: top right;
@@ -1000,7 +1009,7 @@ summary:focus-visible {
   }
 
   .lanyard {
-    top: 0;
+    top: calc(-1 * var(--header-height));
     right: 0;
     left: auto;
     scale: 0.38;
