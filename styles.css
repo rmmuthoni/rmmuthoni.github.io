@@ -89,6 +89,10 @@ img {
   margin: 0 auto;
 }
 
+.site-nav a {
+  transition: color 180ms ease, transform 180ms ease, opacity 180ms ease;
+}
+
 .nav-side {
   display: flex;
   flex: 1 1 0;
@@ -300,14 +304,30 @@ h1 {
   transform: translateY(0) scale(0.98);
 }
 
-.toolbox {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 0.7rem 1.25rem;
-  width: min(100%, 680px);
+.social-links {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  gap: clamp(2.5rem, 8vw, 7rem);
   margin: 0;
-  padding: 0;
+  padding: 0 clamp(1.5rem, 6vw, 5rem);
   list-style: none;
+}
+
+.social-marquee {
+  width: 100%;
+  overflow: hidden;
+}
+
+.social-track {
+  display: flex;
+  width: max-content;
+  animation: social-scroll 28s linear infinite;
+}
+
+.social-marquee:hover .social-track,
+.social-marquee:focus-within .social-track {
+  animation-play-state: paused;
 }
 
 .stack {
@@ -325,33 +345,47 @@ h1 {
   margin-bottom: 2.25rem;
 }
 
-.toolbox li {
+.social-link {
   display: flex;
-  align-items: center;
-  gap: 0.6rem;
-  min-width: 0;
-  min-height: 2.5rem;
+  min-height: 7rem;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 0.7rem;
   color: var(--ink);
-  font-size: 0.9rem;
+  font-size: 1rem;
   font-weight: 700;
+  text-decoration: none;
+  transition: color 180ms ease, transform 180ms ease, opacity 180ms ease;
 }
 
-.tool-icon {
-  display: grid;
-  width: 1.8rem;
-  height: 1.8rem;
-  place-items: center;
-  flex: 0 0 auto;
+.social-link:hover {
+  color: var(--teal);
+  transform: translateY(-3px);
 }
 
-.tool-icon img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
+.social-link:active {
+  transform: translateY(0);
 }
 
-.tool-icon--dbt {
-  width: 3rem;
+.social-link svg {
+  width: 2.25rem;
+  height: 2.25rem;
+}
+
+.social-link--pending {
+  color: var(--muted);
+}
+
+.social-link--pending small {
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+@keyframes social-scroll {
+  to {
+    transform: translateX(-50%);
+  }
 }
 
 .lanyard {
@@ -935,10 +969,11 @@ summary:focus-visible {
   }
 
   .nav-home {
-    position: absolute;
-    left: 50%;
-    margin: 0;
-    transform: translateX(-50%);
+    display: none;
+  }
+
+  .site-nav {
+    justify-content: flex-start;
   }
 
   .menu-toggle {
@@ -1032,20 +1067,23 @@ summary:focus-visible {
 
   .hero-copy {
     width: 100%;
-    padding-top: 7.5rem;
+    padding-top: 2.25rem;
   }
 
   .hero-intro,
   h1 {
-    max-width: 60%;
-  }
-
-  h1 {
-    font-size: clamp(2.25rem, 10.5vw, 3.4rem);
+    max-width: 54%;
   }
 
   .hero-role {
-    max-width: 60%;
+    width: 100%;
+    max-width: none;
+    margin-bottom: 4.5rem;
+    white-space: nowrap;
+  }
+
+  h1 {
+    font-size: clamp(2rem, 9vw, 3.4rem);
   }
 
   .hero-description {
@@ -1056,34 +1094,14 @@ summary:focus-visible {
     top: 0.5rem;
     right: 0;
     left: auto;
-    scale: clamp(0.48, 15vw, 0.62);
+    scale: 0.58;
     translate: 0 0;
     transform-origin: top right;
   }
 
-  .toolbox {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 0.45rem;
-    max-width: 100%;
-  }
-
-  .toolbox li {
-    min-width: 0;
-    font-size: 0.72rem;
-  }
-
-  .toolbox li > span:last-child {
-    overflow-wrap: anywhere;
-  }
-
-  .tool-icon {
-    width: 1.4rem;
-    height: 1.4rem;
-  }
-
-  .tool-icon--dbt {
-    width: 2.7rem;
+  .social-links {
+    gap: 2rem;
+    padding-inline: 1.5rem;
   }
 
   .nav-home {
@@ -1188,5 +1206,13 @@ summary:focus-visible {
 
   .hero-role-caret {
     animation: none;
+  }
+
+  .social-track {
+    animation: none !important;
+  }
+
+  .social-links--duplicate {
+    display: none;
   }
 }

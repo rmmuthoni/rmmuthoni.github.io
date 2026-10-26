@@ -14,7 +14,7 @@ This document defines the order an AI coding agent should follow when building o
 
 ### Navigation
 - Build the sticky header first using a flex layout that adapts from laptop to tablet to phone.
-- On wider layouts, arrange section links on both sides of a centered “My Stack” link; keep the owner's name in the hero.
+- On wider layouts, arrange section links on both sides of a centered “My Stack” link; keep the owner's name in the hero. On phones, show only the hamburger button in the header, with My Stack inside the menu.
 - When links no longer fit, collapse them into an accessible hamburger menu with a clear name, state, keyboard operation, focus treatment, and close behavior.
 - Keep destinations consistent with real section IDs; prevent overflow and preserve a logical reading order.
 
@@ -23,11 +23,11 @@ This document defines the order an AI coding agent should follow when building o
 - Display the portrait as a staff-ID/name tag on an animated, bounded draggable lanyard; keep it visible below the sticky header on phones.
 - Use an abstract data-point network that converges on a decision point to ground the analytics scene; avoid empty or generic dashboard filler.
 - Use the abstract connected-data background as a full-section background so it never reserves layout space.
-- Keep the hero focused on the introduction and call to action; put the supplied technology icons in a dedicated “My Stack” section after the hero.
+- Keep the hero focused on the introduction and call to action; put the GitHub, LinkedIn, and TikTok profile links in the “My Stack” section after the hero.
 - Add a visible scroll cue. Use motion as a visual prompt, not as a promise of physical haptic feedback.
 
 ### My Stack
-- Present the supplied technology icons in a dedicated, clearly headed section after the hero.
+- Present linked GitHub, LinkedIn, and TikTok icons in a smooth, looping right-to-left marquee in a dedicated section after the hero. Pause it on hover/focus and respect reduced motion. Keep email as a placeholder until the owner supplies an address.
 
 ### Experience
 - Present career progression as a CV-style timeline or flow connected by an intuitive line.

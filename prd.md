@@ -51,11 +51,11 @@
 - Let the lanyard swing, respond to pointer hover, and support bounded elastic dragging with a naturally lagging badge; respect reduced-motion preferences.
 - Use an abstract, connected data-point illustration that communicates how data relationships lead to informed decisions.
 - Introduce the owner as a data analytics and analytics engineering professional, with an approximately 30-word biography.
-- Keep the hero focused on the introduction and primary action; show Power BI, Apache Airflow, dbt, Python, Snowflake, databases, Azure Data Factory, and Apache Kafka in a dedicated My Stack section after the hero.
+- Keep the hero focused on the introduction and primary action; show linked GitHub, LinkedIn, and TikTok icons in the My Stack section after the hero. Include an email link only when an address is supplied.
 - Include an obvious scroll cue that signals there is more content below.
 
 ### 8.3 My Stack
-- Present the supplied technology icons in a dedicated, clearly headed section immediately after the hero.
+- Present linked GitHub, LinkedIn, and TikTok icons in a smooth, looping right-to-left marquee immediately after the hero. Pause it on hover/focus and respect reduced motion. Keep the email address as a placeholder until supplied.
 
 ### 8.4 Experience
 - Show career progression as a readable CV-style timeline or flow connected by an intuitive line.
@@ -101,8 +101,8 @@
 
 ## 13. Acceptance criteria
 - Navigation, hero, My Stack, experience, projects, scratch pad, contact, and footer exist in the specified order.
-- The center portrait acts as a home link; the sticky navigation flexes responsively and exposes a usable hamburger when needed. On mobile, the hamburger is left and portrait is right at matching dimensions.
-- Hero content introduces the owner, presents a data-network background, toolbox icons, and a visible scroll invitation without reserving space for the background or lanyard.
+- The desktop navigation links to My Stack from its centered link. On mobile, the header shows only the hamburger button, which contains the My Stack and other section links.
+- Hero content introduces the owner, presents a data-network background, and has a visible scroll invitation without reserving space for the background or lanyard.
 - Experience presents the two supplied roles and responsibilities; four project previews link to available details and source code.
 - Project, experience, and scratch-pad content uses supplied facts or visibly marked placeholders.
 - The interface adapts to common mobile and desktop widths and remains readable.

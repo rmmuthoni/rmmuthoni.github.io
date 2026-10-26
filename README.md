@@ -6,7 +6,7 @@ This project is a personal portfolio website for presenting who I am, my career 
 
 1. **Navigation** — Sticky responsive flex layout with section links around a centered “My Stack” link. Collapse to an accessible hamburger menu when links no longer fit.
 2. **Hero** — Name, two professional titles, a concise introduction, and a portrait as a visible, swinging, draggable staff-ID/name tag over an abstract data-point network.
-3. **My Stack** — Technology icons for Power BI, Apache Airflow, dbt, Python, Snowflake, databases, Azure Data Factory, and Apache Kafka.
+3. **My Stack** — A seamless, right-to-left marquee of GitHub, LinkedIn, and TikTok profile icons, with an email placeholder until an address is supplied.
 4. **Experience** — CV-style timeline presenting the supplied Business Intelligence Analyst and Data Analytics Intern roles, dates, organizations, and responsibilities.
 5. **Projects** — Four featured previews with an image, short description, a link to fuller project details, and a GitHub/source link when available.
 6. **Scratch pad** — The creative process, such as an idea on paper, a BI dashboard sketch, and the realized work on a laptop. Identify unfinished work.
@@ -21,7 +21,7 @@ This project is a personal portfolio website for presenting who I am, my career 
 - Use readable typography, consistent spacing, a restrained personal color palette, and strong visual hierarchy.
 - Use Google Sans for body and display text, loaded from Google Fonts.
 - Keep the navigation sticky; layer the hero data illustration and lanyard so they do not reserve space above the introduction.
-- Use the original Power BI, Apache Airflow, dbt, Python, Snowflake, Azure Data Factory, and Apache Kafka SVG marks in the toolbox; use a database symbol for the generic database entry.
+- Show GitHub, LinkedIn, and TikTok profile links in the My Stack section; add an email link when an address is supplied.
 - Make project previews and experience entries quick to scan; use meaningful imagery and short descriptions rather than dense text.
 - Provide descriptive alt text for meaningful images, sufficient color contrast, and keyboard-accessible navigation.
 - Use clearly marked editable placeholders until I provide final biography, experience, project, image, and profile details.
@@ -42,15 +42,15 @@ portfolio/
 
 This is a starting outline; the exact files may vary with the implementation. Keep image and document paths organized and use optimized images for faster loading.
 
-Toolbox icons are stored locally in `assets/icons/`. Brand marks are sourced from Iconify's SVG Logos collection (CC0), Simple Icons (CC0), and Devicon (MIT). Product names and logos remain the property of their respective owners.
+Social profile marks are inline SVGs. The former technology icons remain in `assets/icons/` but are not currently shown.
 
 ## Social profiles
 
-The approved profiles are linked in the hero and contact sections:
+The approved profiles are linked in the My Stack and contact sections:
 
-- TikTok: [@rmmuthoni](https://www.tiktok.com/@rmmuthoni)
 - GitHub: [rmmuthoni](https://github.com/rmmuthoni)
 - LinkedIn: [muthoni-rogers](https://www.linkedin.com/in/muthoni-rogers/)
+- TikTok: [@rmmuthoni](https://www.tiktok.com/@rmmuthoni)
 - Email: `[email address to be supplied]`
 
 ## Publish with GitHub Pages
