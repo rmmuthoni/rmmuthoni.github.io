@@ -1109,7 +1109,7 @@ summary:focus-visible {
 
   .hero h1 {
     max-width: 65%;
-    font-size: clamp(2.5rem, 11vw, 3.75rem);
+    font-size: clamp(3rem, 13vw, 4rem);
   }
 
   .hero-description {
