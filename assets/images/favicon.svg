@@ -1,14 +1,14 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
-  <defs>
-    <clipPath id="circle">
-      <circle cx="24" cy="24" r="24"/>
-    </clipPath>
-  </defs>
-  <image
-    href="rogers_photo.jpeg"
-    width="48"
-    height="48"
-    preserveAspectRatio="xMidYMid slice"
-    clip-path="url(#circle)"
-  />
+  <circle cx="24" cy="24" r="24" fill="#185c57"/>
+  <text
+    x="24"
+    y="25"
+    fill="#fffefa"
+    font-family="Arial, sans-serif"
+    font-size="17"
+    font-weight="700"
+    letter-spacing="-1"
+    text-anchor="middle"
+    dominant-baseline="central"
+  >MR</text>
 </svg>
