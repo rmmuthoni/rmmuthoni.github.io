@@ -72,7 +72,7 @@
 - Explain each stage with a short caption; identify experiments or unfinished work clearly.
 
 ### 8.7 Contact and footer
-- Provide a clear invitation to connect, approved email and profile links, attribution, and a back-to-top link.
+- Provide a contact form delivered through the configured Formspree endpoint, a direct email link, approved profile links, attribution, and a back-to-top link.
 - Do not present example contact information as real owner details.
 
 ## 9. Navigation and interaction
@@ -83,6 +83,7 @@
 
 ## 10. Visual and content direction
 - Use readable typography, consistent spacing, and a restrained personal color palette.
+- Use Material Web components loaded from a pinned CDN import map for navigation and primary actions. Keep UI corners square, apply the Experience section's background color consistently across page sections, and retain the established portfolio palette and particle background.
 - Establish a clear hierarchy from hero to experience, projects, scratch pad, and contact.
 - Use relevant imagery and concise descriptions; distinguish previews from full project case studies.
 
@@ -95,6 +96,7 @@
 ## 12. Technical and publishing constraints
 - Target a static website deployable through GitHub Pages.
 - The static implementation uses `index.html`, `styles.css`, and `script.js` for responsive navigation and the full-page particle field, plus local artwork in `assets/images/`. Load the pinned tsParticles bundle before the local script.
+- Load Material Web 2.5.0 button components through an esm.run import map; keep the site buildless and deployable on GitHub Pages.
 - Keep the implementation simple, maintainable, and compatible with the publishing target.
 - Account for the repository name when configuring asset and navigation paths for a project site.
 - Keep local asset paths organized; avoid unnecessary dependencies or build complexity.
@@ -111,7 +113,7 @@
 - GitHub Pages resolves images and links, and no placeholder profile, email, or project links appear as real owner information.
 
 ## 14. Content dependencies and open items
-- The owner must supply a portrait, role, biography, a CV or LinkedIn reference, and an email address. Approved TikTok, LinkedIn, and GitHub profiles are provided.
+- The owner must supply a portrait, role, biography, and a CV or LinkedIn reference. The contact email and Formspree endpoint are configured; approved TikTok, LinkedIn, and GitHub profiles are provided.
 - The owner has supplied two experience entries. Further roles can be added as additional details are ready.
 - The owner supplied the public retail analytics project at [data-modeling-with-dbt-snowflake-and-powerbi](https://github.com/rmmuthoni/data-modeling-with-dbt-snowflake-and-powerbi); three more projects and any additional project imagery or contribution details remain to be supplied.
 - The owner must provide scratch-pad material and decide which experiments or works in progress to publish.

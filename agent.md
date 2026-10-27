@@ -61,6 +61,7 @@ This document defines the order an AI coding agent should follow when building o
 ## Working rules
 
 - Prefer the simplest maintainable implementation that satisfies the PRD.
+- Use Material Web components through the pinned CDN import map for navigation and primary actions. Keep interface corners square, reuse the Experience background color across page sections, and preserve the portfolio's established palette and content.
 - Preserve existing content and unrelated user changes; avoid unnecessary dependencies and infrastructure.
 - Follow existing project patterns and `.github/copilot-instructions.md` without sacrificing accessibility or the PRD's requirements.
 - Update the PRD or README only when an intentional product or publishing decision changes.

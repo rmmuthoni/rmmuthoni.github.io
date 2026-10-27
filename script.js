@@ -17,7 +17,10 @@ if (menuButton && mobileMenu) {
   });
 
   mobileMenu.addEventListener("click", (event) => {
-    if (event.target instanceof HTMLAnchorElement) {
+    if (
+      event.target instanceof Element &&
+      event.target.closest("md-text-button[href]")
+    ) {
       setMenuOpen(false);
     }
   });
