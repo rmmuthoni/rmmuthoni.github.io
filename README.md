@@ -20,7 +20,7 @@ This project is a personal portfolio website for presenting who I am, my career 
 - Use a flex-based header that adapts from laptop to tablet to phone; use the hamburger when the links no longer fit.
 - Use readable typography, consistent spacing, a restrained personal color palette, and strong visual hierarchy.
 - Use Google Sans for body and display text, loaded from Google Fonts.
-- Keep the navigation sticky; layer the hero particle field and lanyard so neither reserves space above the introduction. The field is confined to the hero and respects reduced-motion preferences.
+- Keep the navigation sticky; layer the full-page particle field and hero lanyard so neither reserves space above the introduction. Use quiet, translucent section colors so the field remains visible behind the page while preserving readable content; respect reduced-motion preferences.
 - Show GitHub, LinkedIn, X, and TikTok icons directly below the hero's “Explore my work” button.
 - Show technology icons for Power BI, Apache Airflow, dbt, Python, Snowflake, databases, Azure Data Factory, Apache Kafka, Microsoft Excel, Google Sheets, and Qlik Sense/QlikView in the My Stack section.
 - Make project previews and experience entries quick to scan; use meaningful imagery and short descriptions rather than dense text.

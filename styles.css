@@ -2,9 +2,10 @@
   color-scheme: light;
   --paper: #f4f2ec;
   --paper-deep: #ebe8de;
-  --experience-background: var(--paper-deep);
+  --experience-background: rgb(235 232 222 / 84%);
   --header-background: var(--experience-background);
-  --stack-background: #e4e9df;
+  --stack-background: rgb(228 233 223 / 84%);
+  --scratch-background: rgb(214 228 220 / 84%);
   --ink: #182a2a;
   --muted: #647270;
   --teal: #185c57;
@@ -31,7 +32,7 @@ html {
 body {
   margin: 0;
   overflow-x: clip;
-  background: var(--paper);
+  background: #fff;
   color: var(--ink);
   font-family: var(--font-body);
   line-height: 1.6;
@@ -79,6 +80,11 @@ img {
   width: 100%;
   padding: 1rem var(--page-gutter);
   background: var(--header-background);
+}
+
+main {
+  position: relative;
+  z-index: 1;
 }
 
 .site-nav {
@@ -172,17 +178,19 @@ img {
   padding-inline: clamp(1.5rem, 6vw, 6.5rem);
   padding-top: clamp(1.75rem, 4vh, 3.25rem);
   padding-bottom: 4.5rem;
-  background-color: #fff;
+  background-color: transparent;
 }
 
 #tsparticles {
-  position: absolute;
+  position: fixed;
   z-index: 0;
-  inset: 0;
-  width: 100%;
-  height: 100%;
+  inset: 0 auto auto 0;
+  width: 100vw;
+  height: 100vh;
+  height: 100dvh;
   overflow: hidden;
   background-color: #fff;
+  pointer-events: none;
 }
 
 .hero-copy {
@@ -198,9 +206,9 @@ img {
   inset: -0.75rem -1.25rem;
   background: linear-gradient(
     90deg,
-    rgb(255 255 255 / 97%) 0%,
-    rgb(255 255 255 / 90%) 68%,
-    rgb(255 255 255 / 55%) 100%
+    rgb(255 255 255 / 94%) 0%,
+    rgb(255 255 255 / 86%) 68%,
+    rgb(255 255 255 / 45%) 100%
   );
   content: "";
   pointer-events: none;
@@ -848,7 +856,7 @@ h2 {
   padding-inline: 0;
   padding-top: 7rem;
   padding-bottom: 7rem;
-  background: var(--teal-light);
+  background: var(--scratch-background);
 }
 
 .scratch-pad .section-heading {
