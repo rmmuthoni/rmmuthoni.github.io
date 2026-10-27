@@ -21,7 +21,7 @@ This document defines the order an AI coding agent should follow when building o
 ### Hero
 - Introduce the owner as “Muthoni, Rogers,” with the supplied Data Analytics and Analytics Engineering titles and short biography.
 - Display the portrait as a staff-ID/name tag on an animated, bounded draggable lanyard; keep it visible below the sticky header on phones.
-- Use a clean, interactive liquid-plexus particle field as a fixed, full-page background behind content; keep it responsive and respectful of reduced-motion preferences.
+- Use a clean, interactive liquid-plexus particle field sized to the full page behind content so new nodes appear as visitors scroll; keep it responsive and respectful of reduced-motion preferences.
 - Layer the particle field and lanyard so neither reserves space above the introduction.
 - Keep the hero focused on the introduction and call to action; put the technology icons in a “My Stack” section after the hero.
 - Place the GitHub, LinkedIn, X, and TikTok icons immediately below the hero call to action. Link approved profiles; keep the X mark as a non-linked placeholder until the owner supplies its profile URL.

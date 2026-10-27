@@ -21,7 +21,7 @@ This project is a personal portfolio website for presenting who I am, my career 
 - Use readable typography, consistent spacing, a restrained personal color palette, and strong visual hierarchy.
 - Use Material Web components loaded from a pinned CDN for navigation and primary actions. Keep UI corners square, use the Experience section's shared background color throughout the page sections, and retain the portfolio's teal-and-earth palette and full-page particle background.
 - Use Google Sans for body and display text, loaded from Google Fonts.
-- Keep the navigation sticky; layer the full-page particle field and hero lanyard so neither reserves space above the introduction. Use quiet, translucent section colors so the field remains visible behind the page while preserving readable content; respect reduced-motion preferences.
+- Keep the navigation sticky; let the full-page particle field scroll with the content so visitors see new nodes farther down the page, while the hero lanyard reserves no space above the introduction. Use quiet, translucent section colors so the field remains visible behind the page while preserving readable content; respect reduced-motion preferences.
 - Show GitHub, LinkedIn, X, and TikTok icons directly below the hero's “Explore my work” button.
 - Show technology icons for Power BI, Apache Airflow, dbt, Python, Snowflake, databases, Azure Data Factory, Apache Kafka, Microsoft Excel, Google Sheets, and Qlik Sense/QlikView in the My Stack section.
 - Make project previews and experience entries quick to scan; use meaningful imagery and short descriptions rather than dense text.

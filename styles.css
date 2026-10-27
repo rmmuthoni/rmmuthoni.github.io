@@ -51,6 +51,7 @@ html {
 }
 
 body {
+  position: relative;
   margin: 0;
   overflow-x: clip;
   background: #fff;
@@ -193,12 +194,11 @@ main {
 }
 
 #tsparticles {
-  position: fixed;
+  position: absolute;
   z-index: 0;
-  inset: 0 auto auto 0;
-  width: 100vw;
-  height: 100vh;
-  height: 100dvh;
+  top: 0;
+  left: 0;
+  width: 100%;
   overflow: hidden;
   background-color: #fff;
   pointer-events: none;

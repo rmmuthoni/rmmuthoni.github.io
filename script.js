@@ -102,6 +102,16 @@ if (stackTrack && stackItems) {
 const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 const particlesContainer = document.querySelector("#tsparticles");
 if (particlesContainer) {
+  let particleSystem;
+  const resizeParticleField = () => {
+    particlesContainer.style.height = `${document.body.offsetHeight}px`;
+    particleSystem?.canvas.resize();
+  };
+
+  resizeParticleField();
+  const particleFieldObserver = new ResizeObserver(resizeParticleField);
+  particleFieldObserver.observe(document.body);
+
   if (window.tsParticles && typeof window.loadAll === "function") {
     window.loadAll(window.tsParticles)
       .then(() => window.tsParticles.load({
@@ -174,6 +184,10 @@ if (particlesContainer) {
           },
         },
       }))
+      .then((container) => {
+        particleSystem = container;
+        resizeParticleField();
+      })
       .catch((error) => {
         console.error("Unable to initialize the hero particle background.", error);
       });
