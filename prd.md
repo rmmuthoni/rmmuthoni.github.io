@@ -49,7 +49,7 @@
 - Introduce the owner with the provisional display name “Muthoni, Rogers,” role, and concise biography; use clearly marked editable placeholders until approved.
 - Feature the owner portrait as a staff ID/name tag hanging from a lanyard that stays visible below the sticky navigation on phones.
 - Let the lanyard swing, respond to pointer hover, and support bounded elastic dragging with a naturally lagging badge; respect reduced-motion preferences.
-- Use an abstract, connected data-point illustration that communicates how data relationships lead to informed decisions.
+- Use a full-bleed, interactive tsParticles liquid-plexus field within the hero, on white. Use about 100 dark slate nodes sized 1.5–3px, subtle linked lines with a 120px distance, slow natural drift, and a 150px cursor-repel area. Keep the field behind the hero content, resize it with the hero, and disable movement and hover effects when reduced motion is preferred.
 - Introduce the owner as a data analytics and analytics engineering professional, with an approximately 30-word biography.
 - Keep the hero focused on the introduction and primary action; show technology icons in the My Stack section after the hero.
 - Place GitHub, LinkedIn, X, and TikTok icons directly below the primary action. Use supplied profile links; do not invent the X profile URL.
@@ -78,7 +78,7 @@
 ## 9. Navigation and interaction
 - Navigation links lead to the relevant page sections; the centered “My Stack” link replaces the name in the navigation and links to the My Stack section.
 - Provide visible interaction and focus states, and keep essential content available without JavaScript.
-- Use motion sparingly for the lanyard and scroll cue; honor reduced-motion preferences.
+- Use motion sparingly for the lanyard, scroll cue, and hero particle field; honor reduced-motion preferences.
 - A browser cannot guarantee physical haptic feedback, so the scroll prompt must communicate visually without requiring vibration.
 
 ## 10. Visual and content direction
@@ -94,7 +94,7 @@
 
 ## 12. Technical and publishing constraints
 - Target a static website deployable through GitHub Pages.
-- The static implementation uses `index.html`, `styles.css`, `script.js` for responsive navigation, and local artwork in `assets/images/`.
+- The static implementation uses `index.html`, `styles.css`, and `script.js` for responsive navigation and the hero particle field, plus local artwork in `assets/images/`. Load the pinned tsParticles bundle before the local script.
 - Keep the implementation simple, maintainable, and compatible with the publishing target.
 - Account for the repository name when configuring asset and navigation paths for a project site.
 - Keep local asset paths organized; avoid unnecessary dependencies or build complexity.
@@ -103,7 +103,7 @@
 ## 13. Acceptance criteria
 - Navigation, hero, My Stack, experience, projects, scratch pad, contact, and footer exist in the specified order.
 - The desktop navigation links to My Stack from its centered link. On mobile, the header shows only the hamburger button, which contains the My Stack and other section links.
-- Hero content introduces the owner, presents a data-network background, and has a visible scroll invitation without reserving space for the background or lanyard.
+- Hero content introduces the owner over the interactive particle field and has a visible scroll invitation without reserving space for the background or lanyard.
 - Experience presents the two supplied roles and responsibilities; four project previews link to available details and source code.
 - Project, experience, and scratch-pad content uses supplied facts or visibly marked placeholders.
 - The interface adapts to common mobile and desktop widths and remains readable.

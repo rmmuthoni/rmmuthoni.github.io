@@ -172,19 +172,17 @@ img {
   padding-inline: clamp(1.5rem, 6vw, 6.5rem);
   padding-top: clamp(1.75rem, 4vh, 3.25rem);
   padding-bottom: 4.5rem;
+  background-color: #fff;
 }
 
-.hero::before {
+#tsparticles {
   position: absolute;
-  z-index: -1;
+  z-index: 0;
   inset: 0;
-  background-image: url("assets/images/analytics-scene.svg");
-  background-repeat: no-repeat;
-  background-position: right 3% center;
-  background-size: min(92%, 1180px) auto;
-  content: "";
-  opacity: 0.8;
-  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: #fff;
 }
 
 .hero-copy {
@@ -200,9 +198,9 @@ img {
   inset: -0.75rem -1.25rem;
   background: linear-gradient(
     90deg,
-    rgb(244 242 236 / 97%) 0%,
-    rgb(244 242 236 / 90%) 68%,
-    rgb(244 242 236 / 55%) 100%
+    rgb(255 255 255 / 97%) 0%,
+    rgb(255 255 255 / 90%) 68%,
+    rgb(255 255 255 / 55%) 100%
   );
   content: "";
   pointer-events: none;
@@ -627,6 +625,7 @@ h1 {
 
 .scroll-cue {
   position: absolute;
+  z-index: 1;
   right: var(--page-gutter);
   bottom: 2rem;
   display: inline-flex;
@@ -1086,12 +1085,6 @@ summary:focus-visible {
     min-height: calc(100svh - var(--header-height));
     padding-top: 0.75rem;
     padding-bottom: 3rem;
-  }
-
-  .hero::before {
-    background-position: 58% 42%;
-    background-size: 155% auto;
-    opacity: 0.58;
   }
 
   .hero-copy {

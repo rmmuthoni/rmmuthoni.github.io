@@ -5,7 +5,7 @@ This project is a personal portfolio website for presenting who I am, my career 
 ## Planned sections
 
 1. **Navigation** — Sticky responsive flex layout with section links around a centered “My Stack” link. Collapse to an accessible hamburger menu when links no longer fit.
-2. **Hero** — Name, two professional titles, a concise introduction, and a portrait as a visible, swinging, draggable staff-ID/name tag over an abstract data-point network.
+2. **Hero** — Name, two professional titles, a concise introduction, and a portrait as a visible, swinging, draggable staff-ID/name tag over an interactive liquid-plexus particle field.
 3. **My Stack** — A seamless right-to-left marquee of technology icons for Power BI, Apache Airflow, dbt, Python, Snowflake, databases, Azure Data Factory, Apache Kafka, Microsoft Excel, Google Sheets, and Qlik Sense/QlikView.
 4. **Experience** — CV-style timeline presenting the supplied Business Intelligence Analyst and Data Analytics Intern roles, dates, organizations, and responsibilities.
 5. **Projects** — Four featured previews with an image, short description, a link to fuller project details, and a GitHub/source link when available.
@@ -20,7 +20,7 @@ This project is a personal portfolio website for presenting who I am, my career 
 - Use a flex-based header that adapts from laptop to tablet to phone; use the hamburger when the links no longer fit.
 - Use readable typography, consistent spacing, a restrained personal color palette, and strong visual hierarchy.
 - Use Google Sans for body and display text, loaded from Google Fonts.
-- Keep the navigation sticky; layer the hero data illustration and lanyard so they do not reserve space above the introduction.
+- Keep the navigation sticky; layer the hero particle field and lanyard so neither reserves space above the introduction. The field is confined to the hero and respects reduced-motion preferences.
 - Show GitHub, LinkedIn, X, and TikTok icons directly below the hero's “Explore my work” button.
 - Show technology icons for Power BI, Apache Airflow, dbt, Python, Snowflake, databases, Azure Data Factory, Apache Kafka, Microsoft Excel, Google Sheets, and Qlik Sense/QlikView in the My Stack section.
 - Make project previews and experience entries quick to scan; use meaningful imagery and short descriptions rather than dense text.
@@ -44,6 +44,7 @@ portfolio/
 This is a starting outline; the exact files may vary with the implementation. Keep image and document paths organized and use optimized images for faster loading.
 
 Technology icons are stored locally in `assets/icons/`.
+The hero particle field uses the pinned tsParticles all-bundle from jsDelivr.
 
 ## Social profiles
 

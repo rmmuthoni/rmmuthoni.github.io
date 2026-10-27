@@ -21,8 +21,8 @@ This document defines the order an AI coding agent should follow when building o
 ### Hero
 - Introduce the owner as “Muthoni, Rogers,” with the supplied Data Analytics and Analytics Engineering titles and short biography.
 - Display the portrait as a staff-ID/name tag on an animated, bounded draggable lanyard; keep it visible below the sticky header on phones.
-- Use an abstract data-point network that converges on a decision point to ground the analytics scene; avoid empty or generic dashboard filler.
-- Use the abstract connected-data background as a full-section background so it never reserves layout space.
+- Use a clean, interactive liquid-plexus particle field to ground the analytics scene; keep it within the hero, behind content, responsive, and respectful of reduced-motion preferences.
+- Layer the particle field and lanyard so neither reserves space above the introduction.
 - Keep the hero focused on the introduction and call to action; put the technology icons in a “My Stack” section after the hero.
 - Place the GitHub, LinkedIn, X, and TikTok icons immediately below the hero call to action. Link approved profiles; keep the X mark as a non-linked placeholder until the owner supplies its profile URL.
 - Add a visible scroll cue. Use motion as a visual prompt, not as a promise of physical haptic feedback.

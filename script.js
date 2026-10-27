@@ -55,6 +55,90 @@ if (stackTrack && stackItems) {
 }
 
 const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+const particlesContainer = document.querySelector("#tsparticles");
+if (particlesContainer) {
+  if (window.tsParticles && typeof window.loadAll === "function") {
+    window.loadAll(window.tsParticles)
+      .then(() => window.tsParticles.load({
+        id: "tsparticles",
+        options: {
+          background: {
+            color: { value: "#ffffff" },
+          },
+          fullScreen: {
+            enable: false,
+          },
+          detectRetina: true,
+          fpsLimit: 60,
+          particles: {
+            number: {
+              value: 100,
+              density: {
+                enable: true,
+                width: 960,
+                height: 960,
+              },
+            },
+            color: {
+              value: "#1E293B",
+            },
+            shape: {
+              type: "circle",
+            },
+            opacity: {
+              value: 0.55,
+            },
+            size: {
+              value: { min: 1.5, max: 3 },
+            },
+            links: {
+              enable: true,
+              distance: 120,
+              color: "rgba(30, 41, 59, 0.08)",
+              opacity: 1,
+              width: 1,
+            },
+            move: {
+              enable: !reducedMotion.matches,
+              speed: { min: 0.5, max: 1.5 },
+              direction: "none",
+              random: true,
+              straight: false,
+              outModes: {
+                default: "bounce",
+              },
+            },
+          },
+          interactivity: {
+            events: {
+              onHover: {
+                enable: !reducedMotion.matches,
+                mode: "repulse",
+              },
+            },
+            modes: {
+              repulse: {
+                distance: 150,
+                duration: 0.4,
+                factor: 1,
+                speed: 1,
+                maxSpeed: 50,
+                easing: "ease-out-quad",
+              },
+            },
+          },
+        },
+      }))
+      .catch((error) => {
+        console.error("Unable to initialize the hero particle background.", error);
+      });
+  } else {
+    console.error(
+      "The tsParticles library did not load; the hero background is unavailable.",
+    );
+  }
+}
+
 const roleText = document.querySelector("[data-role-text]");
 const roleAnnouncement = document.querySelector("[data-role-announcement]");
 if (roleText instanceof HTMLElement && roleAnnouncement instanceof HTMLElement) {
