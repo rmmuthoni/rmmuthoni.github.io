@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+  <defs>
+    <clipPath id="circle">
+      <circle cx="24" cy="24" r="24"/>
+    </clipPath>
+  </defs>
+  <image
+    href="rogers_photo.jpeg"
+    width="48"
+    height="48"
+    preserveAspectRatio="xMidYMid slice"
+    clip-path="url(#circle)"
+  />
+</svg>
