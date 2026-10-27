@@ -22,7 +22,7 @@
   --md-sys-color-surface: var(--md-surface);
   --md-sys-color-surface-container: var(--md-surface-container);
   --md-sys-shape-corner-full: 0px;
-  --section-background: rgb(235 232 222 / 84%);
+  --section-background: rgb(235 232 222 / 68%);
   --experience-background: var(--section-background);
   --header-background: var(--section-background);
   --stack-background: var(--section-background);
@@ -980,6 +980,15 @@ h2 {
 .contact-form {
   display: grid;
   gap: 1.15rem;
+}
+
+.contact-form-status {
+  margin: 0;
+  color: var(--muted);
+}
+
+.contact-form-status:empty {
+  display: none;
 }
 
 .contact-field {

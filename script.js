@@ -48,6 +48,48 @@ if (year) {
   year.textContent = String(new Date().getFullYear());
 }
 
+const contactForm = document.querySelector(".contact-form");
+const contactFormStatus = contactForm?.querySelector(".contact-form-status");
+const contactSubmit = contactForm?.querySelector(".contact-submit");
+if (
+  contactForm instanceof HTMLFormElement &&
+  contactFormStatus instanceof HTMLElement &&
+  contactSubmit instanceof HTMLButtonElement
+) {
+  const submitLabel = contactSubmit.textContent;
+
+  contactForm.addEventListener("submit", async (event) => {
+    event.preventDefault();
+    contactSubmit.disabled = true;
+    contactSubmit.textContent = "Sending…";
+    contactFormStatus.textContent = "";
+
+    try {
+      const response = await fetch(contactForm.action, {
+        method: "POST",
+        body: new FormData(contactForm),
+        headers: {
+          Accept: "application/json",
+        },
+      });
+
+      if (!response.ok) {
+        throw new Error(`Form submission failed with status ${response.status}.`);
+      }
+
+      contactForm.reset();
+      contactFormStatus.textContent = "Thanks for your message. It has been sent.";
+    } catch (error) {
+      console.error("Unable to submit the contact form.", error);
+      contactFormStatus.textContent =
+        "Your message could not be sent. Please try again.";
+    } finally {
+      contactSubmit.disabled = false;
+      contactSubmit.textContent = submitLabel;
+    }
+  });
+}
+
 const stackTrack = document.querySelector(".stack-track");
 const stackItems = stackTrack?.querySelector(".toolbox");
 if (stackTrack && stackItems) {
