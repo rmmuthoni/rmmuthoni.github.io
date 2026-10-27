@@ -392,6 +392,20 @@ if (lanyard && lanyardSwing) {
     startSpring();
   };
 
+  const disturbLanyard = (clientX, strength) => {
+    if (reducedMotion.matches || drag) {
+      return;
+    }
+
+    interruptIntroduction();
+    const bounds = lanyard.getBoundingClientRect();
+    const direction = clientX <= bounds.left + bounds.width / 2 ? 1 : -1;
+    pointerHover = false;
+    spring.targetAngle = 0;
+    spring.velocity += direction * strength;
+    startSpring();
+  };
+
   const interruptIntroduction = () => {
     clearRevealTimers();
     cancelFall();
@@ -505,6 +519,24 @@ if (lanyard && lanyardSwing) {
   lanyard.addEventListener("pointerup", (event) => releaseLanyard(event));
   lanyard.addEventListener("pointercancel", (event) => releaseLanyard(event, true));
   lanyard.addEventListener("lostpointercapture", (event) => releaseLanyard(event, true));
+  window.addEventListener("pointerdown", (event) => {
+    if (event.isPrimary && event.button === 0 && !lanyard.contains(event.target)) {
+      disturbLanyard(event.clientX, 0.65);
+    }
+  });
+  let lastScrollDisturbance = -Infinity;
+  window.addEventListener("wheel", (event) => {
+    if (!event.deltaX && !event.deltaY) {
+      return;
+    }
+
+    if (event.timeStamp - lastScrollDisturbance < 260) {
+      return;
+    }
+
+    lastScrollDisturbance = event.timeStamp;
+    disturbLanyard(event.clientX, 0.45);
+  }, { passive: true });
   lanyard.addEventListener("pointerleave", () => {
     if (!drag) {
       pointerHover = false;
