@@ -99,8 +99,10 @@ img {
   top: 0;
   z-index: 10;
   width: 100%;
-  padding: 1rem var(--page-gutter);
+  padding: 0 var(--page-gutter);
   background: var(--header-background);
+  border-bottom: 1px solid var(--line);
+  backdrop-filter: blur(12px);
 }
 
 main {
@@ -112,8 +114,7 @@ main {
   position: relative;
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: clamp(2rem, 7vw, 7.5rem);
+  justify-content: flex-start;
   max-width: var(--page-width);
   min-height: 4.5rem;
   margin: 0 auto;
@@ -135,71 +136,31 @@ main {
   --md-text-button-label-text-color: var(--teal);
 }
 
-.nav-side {
+.nav-links {
   display: flex;
-  flex: 1 1 0;
   align-items: center;
-  gap: clamp(1.25rem, 4vw, 4.75rem);
+  gap: clamp(0.25rem, 1vw, 0.9rem);
 }
 
-.nav-side--left {
-  justify-content: flex-end;
-}
-
-.nav-side--right {
-  justify-content: flex-start;
-}
-
-.nav-side md-text-button,
+.nav-links md-text-button,
 .mobile-menu md-text-button {
   text-decoration: none;
   font-size: 0.92rem;
   font-weight: 600;
 }
 
-.nav-side md-text-button {
+.nav-links md-text-button {
   display: inline-flex;
-  min-height: 3rem;
-  padding: 0.55rem 1rem;
+  min-height: 3.5rem;
+  padding: 0.5rem 0.75rem;
   color: var(--ink);
 }
 
-.nav-side md-text-button:hover,
-.nav-side md-text-button:focus-visible,
+.nav-links md-text-button:hover,
+.nav-links md-text-button:focus-visible,
 .mobile-menu md-text-button:hover,
 .mobile-menu md-text-button:focus-visible {
   color: var(--teal);
-}
-
-.nav-home {
-  position: relative;
-  z-index: 4;
-  display: inline-flex;
-  flex: 0 0 auto;
-  min-height: 3rem;
-  padding: 0.55rem 1rem;
-  font-size: 1rem;
-  font-weight: 800;
-  letter-spacing: -0.04em;
-  text-decoration: none;
-  --md-text-button-label-text-color: var(--ink);
-  --md-text-button-label-text-font: var(--font-body);
-}
-
-.nav-home::after {
-  content: none;
-}
-
-.nav-side md-text-button:hover,
-.nav-side md-text-button:focus-visible,
-.nav-home:hover,
-.nav-home:focus-visible {
-  background: rgb(24 92 87 / 8%);
-}
-
-.nav-home:focus-visible {
-  outline: 3px solid var(--orange);
-  outline-offset: 3px;
 }
 
 .menu-toggle,
@@ -1157,16 +1118,8 @@ summary:focus-visible {
     gap: 1rem;
   }
 
-  .nav-side {
+  .nav-links {
     display: none;
-  }
-
-  .nav-home {
-    display: none;
-  }
-
-  .site-nav {
-    justify-content: flex-start;
   }
 
   .menu-toggle {
@@ -1313,14 +1266,6 @@ summary:focus-visible {
 
   .toolbox li {
     font-size: 0.8rem;
-  }
-
-  .nav-home {
-    right: 0;
-    left: auto;
-    padding: 0.18rem;
-    transform: none;
-    font-size: 0.9rem;
   }
 
   .menu-toggle {

@@ -14,7 +14,7 @@ This document defines the order an AI coding agent should follow when building o
 
 ### Navigation
 - Build the sticky header first using a flex layout that adapts from laptop to tablet to phone.
-- On wider layouts, arrange section links on both sides of a centered “My Stack” link; keep the owner's name in the hero. On phones, show only the hamburger button in the header, with My Stack inside the menu.
+- On wider layouts, arrange links left-to-right in page order: Home, My Stack, Experience, Projects, Scratch pad, and Contact. Style the sticky header as a quiet Material Web app bar. On phones, show the hamburger button in the header and preserve the same link order in its menu.
 - When links no longer fit, collapse them into an accessible hamburger menu with a clear name, state, keyboard operation, focus treatment, and close behavior.
 - Keep destinations consistent with real section IDs; prevent overflow and preserve a logical reading order.
 

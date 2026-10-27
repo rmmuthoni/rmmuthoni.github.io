@@ -4,7 +4,7 @@ This project is a personal portfolio website for presenting who I am, my career 
 
 ## Planned sections
 
-1. **Navigation** — Sticky responsive flex layout with section links around a centered “My Stack” link. Collapse to an accessible hamburger menu when links no longer fit.
+1. **Navigation** — Sticky Material Web app bar with ordered section links: Home, My Stack, Experience, Projects, Scratch pad, and Contact. Collapse to an accessible hamburger menu on smaller screens.
 2. **Hero** — Name, two professional titles, a concise introduction, and a portrait as a visible, swinging, draggable staff-ID/name tag over an interactive liquid-plexus particle field.
 3. **My Stack** — A seamless right-to-left marquee of technology icons for Power BI, Apache Airflow, dbt, Python, Snowflake, databases, Azure Data Factory, Apache Kafka, Microsoft Excel, Google Sheets, and Qlik Sense/QlikView.
 4. **Experience** — CV-style timeline presenting the supplied Business Intelligence Analyst and Data Analytics Intern roles, dates, organizations, and responsibilities.

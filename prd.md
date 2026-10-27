@@ -31,7 +31,7 @@
 
 ## 7. Scope and priorities
 - **Must have:** Responsive portfolio layout with Navigation, Hero, My Stack, Experience, Projects, Scratch Pad, Contact, and Footer sections.
-- **Must have:** Flex-based navigation adapting from laptop to tablet and phone, with section links flanking a centered My Stack link on wide layouts and an accessible hamburger when links do not fit.
+- **Must have:** Material Web app bar navigation adapting from laptop to tablet and phone, with links in page order and an accessible hamburger on smaller screens.
 - **Must have:** Four featured project previews and a clear route to fuller project details and imagery when available.
 - **Must have:** Scannable project and experience content with accessible navigation, meaningful image alternatives, and readable color contrast.
 - **Should have:** Project imagery, live project links, source-code links, and downloadable documents when supplied.
@@ -42,7 +42,7 @@
 
 ## 8. Information architecture and core features
 ### 8.1 Navigation
-- Arrange section links around a centered “My Stack” link on wide screens; keep the header sticky and adapt the flex layout across devices without clipping.
+- Keep the header sticky and style it as a Material Web app bar. Arrange the links in page order—Home, My Stack, Experience, Projects, Scratch pad, Contact—and adapt the layout across devices without clipping.
 - Collapse links into a keyboard-accessible hamburger when they cannot fit; provide clear open, close, and focus states.
 
 ### 8.2 Hero
@@ -76,7 +76,7 @@
 - Do not present example contact information as real owner details.
 
 ## 9. Navigation and interaction
-- Navigation links lead to the relevant page sections; the centered “My Stack” link replaces the name in the navigation and links to the My Stack section.
+- Navigation links lead to the relevant page sections in page order, starting with Home and continuing to My Stack, Experience, Projects, Scratch pad, and Contact.
 - Provide visible interaction and focus states, and keep essential content available without JavaScript.
 - Use motion sparingly for the lanyard, scroll cue, and hero particle field; honor reduced-motion preferences.
 - A browser cannot guarantee physical haptic feedback, so the scroll prompt must communicate visually without requiring vibration.
@@ -104,7 +104,7 @@
 
 ## 13. Acceptance criteria
 - Navigation, hero, My Stack, experience, projects, scratch pad, contact, and footer exist in the specified order.
-- The desktop navigation links to My Stack from its centered link. On mobile, the header shows only the hamburger button, which contains the My Stack and other section links.
+- The desktop navigation follows page order, starting with Home. On mobile, the header shows only the hamburger button, which contains the same ordered section links.
 - Hero content introduces the owner over the interactive particle field and has a visible scroll invitation without reserving space for the background or lanyard.
 - Experience presents the two supplied roles and responsibilities; four project previews link to available details and source code.
 - Project, experience, and scratch-pad content uses supplied facts or visibly marked placeholders.
