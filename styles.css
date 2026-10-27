@@ -656,17 +656,17 @@ h1 {
 
 .scroll-cue-mouse {
   display: block;
-  width: 1.2rem;
-  height: 2.15rem;
-  padding-top: 0.35rem;
-  border: 2px solid currentColor;
+  width: 1.45rem;
+  height: 2.5rem;
+  padding-top: 0.4rem;
+  border: 3px solid currentColor;
   border-radius: 999px;
 }
 
 .scroll-cue-wheel {
   display: block;
-  width: 0.25rem;
-  height: 0.25rem;
+  width: 0.32rem;
+  height: 0.32rem;
   margin-inline: auto;
   border-radius: 50%;
   background: currentColor;
