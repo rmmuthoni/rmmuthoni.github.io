@@ -90,6 +90,7 @@ if (
   });
 }
 
+const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 const stackTrack = document.querySelector(".stack-track");
 const stackItems = stackTrack?.querySelector(".toolbox");
 if (stackTrack && stackItems) {
@@ -99,7 +100,50 @@ if (stackTrack && stackItems) {
   stackTrack.append(duplicateItems);
 }
 
-const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+const projectMarquee = document.querySelector(".project-marquee");
+const projectTrack = projectMarquee?.querySelector(".project-track");
+const projectSet = projectTrack?.querySelector(".project-set");
+const projectToggle = document.querySelector(".project-marquee-toggle");
+if (
+  projectMarquee &&
+  projectTrack &&
+  projectSet &&
+  projectToggle instanceof HTMLButtonElement
+) {
+  const updateProjectMotion = () => {
+    if (reducedMotion.matches) {
+      projectTrack.classList.remove("is-looping", "is-paused");
+      projectMarquee.classList.remove("is-looping");
+      projectTrack.querySelector(".project-set--duplicate")?.remove();
+      projectToggle.hidden = true;
+      projectToggle.setAttribute("aria-pressed", "false");
+      projectToggle.textContent = "Pause projects";
+      return;
+    }
+
+    if (!projectTrack.querySelector(".project-set--duplicate")) {
+      const duplicateSet = projectSet.cloneNode(true);
+      duplicateSet.classList.add("project-set--duplicate");
+      duplicateSet.setAttribute("aria-hidden", "true");
+      duplicateSet.inert = true;
+      projectTrack.append(duplicateSet);
+    }
+
+    projectMarquee.classList.add("is-looping");
+    projectTrack.classList.add("is-looping");
+    projectToggle.hidden = false;
+  };
+
+  projectToggle.addEventListener("click", () => {
+    const paused = projectTrack.classList.toggle("is-paused");
+    projectToggle.setAttribute("aria-pressed", String(paused));
+    projectToggle.textContent = paused ? "Resume projects" : "Pause projects";
+  });
+
+  updateProjectMotion();
+  reducedMotion.addEventListener("change", updateProjectMotion);
+}
+
 const particlesContainer = document.querySelector("#tsparticles");
 if (particlesContainer) {
   let particleSystem;

@@ -8,7 +8,7 @@ This project is a personal portfolio website for presenting who I am, my career 
 2. **Hero** — Name, two professional titles, a concise introduction, and a portrait as a visible, swinging, draggable staff-ID/name tag over an interactive liquid-plexus particle field.
 3. **My Stack** — A seamless right-to-left marquee of technology icons for Power BI, Apache Airflow, dbt, Python, Snowflake, databases, Azure Data Factory, Apache Kafka, Microsoft Excel, Google Sheets, and Qlik Sense/QlikView.
 4. **Experience** — CV-style timeline presenting the supplied Business Intelligence Analyst and Data Analytics Intern roles, dates, organizations, and responsibilities.
-5. **Projects** — Four featured previews with an image, short description, a link to fuller project details, and a GitHub/source link when available.
+5. **Projects** — Four compact project previews in a right-to-left marquee, with a pause control. The retail analytics preview uses the Snowflake/dbt architecture image, Snowflake/dbt/Power BI icons, and links to the project details and GitHub repository.
 6. **Scratch pad** — The creative process, such as an idea on paper, a BI dashboard sketch, and the realized work on a laptop. Identify unfinished work.
 7. **Contact** — A message form delivered through Formspree, with a direct email link and approved social profiles.
 8. **Footer** — Copyright or attribution and a link back to the top.

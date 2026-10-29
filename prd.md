@@ -63,7 +63,7 @@
 - Include role, organization, dates, supplied responsibilities or outcomes, and company logos where available; retain text labels for each organization.
 
 ### 8.5 Projects
-- Feature four project previews with images, titles, short descriptions, and links to fuller details when available.
+- Feature four compact project previews in a looping, right-to-left marquee with a pause control and reduced-motion support. Use the supplied Snowflake/dbt architecture image and Snowflake, dbt, and Power BI icons on the retail analytics project; link to its details and GitHub repository.
 - Include a GitHub/source link when one exists; distinguish project-detail and source-code actions.
 - Never invent project facts, links, or outcomes; label temporary sample content as placeholder content.
 
