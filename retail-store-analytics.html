@@ -57,7 +57,9 @@
             <p>
               Source data is loaded before transformation. dbt manages the
               warehouse models and their dependencies; Power BI reads from the
-              curated gold layer for its semantic model and reports.
+              curated gold layer for its semantic model and reports. Stakeholders
+              should agree on gold-model grain, relationships, and metric
+              definitions so core business logic is not repeated across reports.
             </p>
           </div>
           <figure class="project-detail-figure project-architecture-figure">
@@ -98,6 +100,37 @@
         </div>
       </section>
 
+      <section class="project-detail-section project-detail-rationale" aria-labelledby="rationale-title">
+        <div class="project-detail-inner project-detail-two-column">
+          <h2 id="rationale-title">Why a layered warehouse</h2>
+          <p>
+            Retail data can be split across operational systems and use
+            inconsistent formats or definitions. Preserving loaded inputs while
+            centralizing cleansing and business rules gives analysis a traceable,
+            reusable foundation for sales by store or product, customer trends,
+            and returns, without repeating report logic.
+          </p>
+        </div>
+      </section>
+
+      <section class="project-detail-section project-detail-lifecycle" aria-labelledby="lifecycle-title">
+        <div class="project-detail-inner">
+          <div class="project-detail-copy">
+            <h2 id="lifecycle-title">Data flow and development lifecycle</h2>
+            <p>From source loading through tested models to Power BI reporting, as described in the project README.</p>
+          </div>
+          <ol class="project-lifecycle-list">
+            <li>Extract retail source data and load it into Snowflake bronze tables.</li>
+            <li>Declare the loaded tables as dbt sources and configure the project connection.</li>
+            <li>Build silver models to standardize fields, address duplicates and nulls, and test important keys and relationships.</li>
+            <li>Build gold facts, dimensions, and aggregates with documented business rules.</li>
+            <li>Use incremental models for suitable large tables to process new or changed records instead of rebuilding everything; this can reduce processing and compute as data grows.</li>
+            <li>Run dbt tests and review model documentation and lineage before publishing.</li>
+            <li>Connect Power BI to the gold layer, configure its semantic model and refresh, then share reports with business users.</li>
+          </ol>
+        </div>
+      </section>
+
       <section class="project-detail-section project-detail-dashboard" aria-labelledby="dashboard-title">
         <div class="project-detail-inner">
           <div class="project-detail-copy">
@@ -114,6 +147,29 @@
             >
             <figcaption>Customer Demographics report, published in the project repository.</figcaption>
           </figure>
+        </div>
+      </section>
+
+      <section class="project-detail-section project-detail-prerequisites" aria-labelledby="prerequisites-title">
+        <div class="project-detail-inner">
+          <div class="project-detail-copy">
+            <h2 id="prerequisites-title">Deployment prerequisites</h2>
+            <p>The README identifies these as environment requirements; it does not prescribe a specific source system or ingestion product.</p>
+          </div>
+          <ul class="project-objectives-list">
+            <li>Access to retail source data and a functioning extraction and loading process.</li>
+            <li>A Snowflake account, database, schemas, warehouse, roles, and permissions for ingestion, dbt, and Power BI.</li>
+            <li>A compatible dbt installation with the Snowflake adapter and a securely configured connection.</li>
+            <li>A dbt project configured with source declarations, model settings, and environment-specific targets.</li>
+            <li>Power BI access, a supported Snowflake connection, and configured dataset ownership and refresh credentials.</li>
+            <li>Stakeholder-approved definitions for metrics such as net sales and return rate, including how discounts, taxes, cancellations, and returns are treated.</li>
+          </ul>
+          <p class="project-deployment-note">
+            Exact versions, schemas, source systems, and ingestion tooling depend
+            on the deployment. Keep credentials in secure environment-managed
+            configuration, not source control. The README recommends Git for
+            version control and review.
+          </p>
         </div>
       </section>
 
@@ -139,6 +195,40 @@
 
     </main>
 
+
+      <section class="project-detail-section project-detail-operations" aria-labelledby="operations-title">
+        <div class="project-detail-inner">
+          <div class="project-detail-copy">
+            <h2 id="operations-title">Quality, security, and operations</h2>
+            <p>Checks and operating practices called out in the project README.</p>
+          </div>
+          <div class="project-practice-grid">
+            <article>
+              <h3>Validation and lineage</h3>
+              <ul>
+                <li>Test critical models for non-null, unique, relationship, and accepted-value constraints.</li>
+                <li>Reconcile row counts and key totals against source extracts where possible.</li>
+                <li>Review dbt documentation and lineage before publishing.</li>
+              </ul>
+            </article>
+            <article>
+              <h3>Incremental operations</h3>
+              <ul>
+                <li>Monitor ingestion freshness, dbt job results, warehouse consumption, and Power BI refresh status.</li>
+                <li>Define handling for late-arriving data, corrections, deletes, and incremental rebuilds.</li>
+                <li>Choose an appropriate change-detection strategy and unique key; periodically compare incremental results with a full refresh.</li>
+              </ul>
+            </article>
+            <article>
+              <h3>Access and ownership</h3>
+              <ul>
+                <li>Use role-based access and expose only the sensitive customer data needed for reporting.</li>
+                <li>Document model owners, refresh cadence, metric definitions, and known limitations.</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
     <footer class="site-footer section-shell project-detail-footer">
       <p>Retail Store Analytics</p>
       <a href="index.html#projects">Back to projects <span aria-hidden="true">↑</span></a>

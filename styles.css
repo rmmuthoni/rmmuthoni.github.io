@@ -1846,11 +1846,40 @@ summary:focus-visible {
   background: #fff;
 }
 
+.project-detail-rationale,
+.project-detail-prerequisites {
+  background: #fff;
+}
+
+.project-detail-lifecycle,
+.project-detail-operations {
+  background: var(--section-background);
+}
+
 .project-objectives-list {
   display: grid;
   gap: 1rem;
   margin: 0;
   padding-left: 1.25rem;
+  color: var(--muted);
+}
+
+.project-lifecycle-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem 3rem;
+  margin: 0;
+  padding-left: 1.5rem;
+  color: var(--muted);
+}
+
+.project-lifecycle-list li {
+  padding-left: 0.35rem;
+}
+
+.project-deployment-note {
+  max-width: 80ch;
+  margin: 1.5rem 0 0;
   color: var(--muted);
 }
 
@@ -1864,6 +1893,26 @@ summary:focus-visible {
 
 .project-detail-model {
   background: var(--section-background);
+}
+
+.project-practice-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 2rem;
+}
+
+.project-practice-grid h3 {
+  margin-bottom: 0.75rem;
+  color: var(--teal);
+  font-size: 1.2rem;
+}
+
+.project-practice-grid ul {
+  display: grid;
+  gap: 0.75rem;
+  margin: 0;
+  padding-left: 1.1rem;
+  color: var(--muted);
 }
 
 .project-detail-text-link {
@@ -1920,7 +1969,9 @@ summary:focus-visible {
   }
 
   .project-layer-list,
-  .project-detail-two-column {
+  .project-detail-two-column,
+  .project-lifecycle-list,
+  .project-practice-grid {
     grid-template-columns: 1fr;
     gap: 1.75rem;
   }
