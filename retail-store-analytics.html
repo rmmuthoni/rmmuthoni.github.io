@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f4f2ec">
+    <meta
+      name="description"
+      content="Project details for Retail Store Analytics with dbt, Snowflake, and Power BI."
+    >
+    <title>Retail Store Analytics — Muthoni, Rogers</title>
+    <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    >
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header project-detail-header">
+      <nav class="site-nav project-detail-nav" aria-label="Project navigation">
+        <a class="project-home-link" href="index.html#top">Muthoni, Rogers</a>
+        <a class="project-back-link" href="index.html#projects">Back to projects</a>
+      </nav>
+    </header>
+
+    <main id="main" class="project-detail-main">
+      <section class="project-detail-hero section-shell" aria-labelledby="project-title">
+        <div class="project-detail-intro">
+          <h1 id="project-title">Retail Store Analytics</h1>
+          <p class="project-detail-subtitle">dbt, Snowflake &amp; Power BI</p>
+          <p class="project-detail-lede">
+            An ELT workflow that loads retail data into Snowflake, transforms it
+            through documented dbt models, and publishes analytics-ready data for Power BI.
+          </p>
+          <ul class="project-detail-tools" aria-label="Project technologies">
+            <li><img src="assets/icons/snowflake.svg" alt="Snowflake"></li>
+            <li><img src="assets/icons/dbt.svg" alt="dbt"></li>
+            <li><img src="assets/icons/power-bi.svg" alt="Power BI"></li>
+          </ul>
+          <a
+            class="project-detail-action"
+            href="https://github.com/rmmuthoni/data-modeling-with-dbt-snowflake-and-powerbi"
+            target="_blank"
+            rel="noopener noreferrer"
+          >View project source</a>
+        </div>
+      </section>
+
+      <section class="project-detail-section project-detail-architecture" aria-labelledby="architecture-title">
+        <div class="project-detail-inner">
+          <div class="project-detail-copy">
+            <h2 id="architecture-title">Architecture and design</h2>
+            <p>
+              Source data is loaded before transformation. dbt manages the
+              warehouse models and their dependencies; Power BI reads from the
+              curated gold layer for its semantic model and reports.
+            </p>
+          </div>
+          <figure class="project-detail-figure project-architecture-figure">
+            <img
+              src="assets/images/Snowflake%20dbt%20Medallion%20Transformation%20Pipeline.png"
+              alt="Retail data flows from source systems into Snowflake bronze, through dbt silver and gold models, and into Power BI."
+              width="1536"
+              height="576"
+            >
+            <figcaption>Retail Store Analytics pipeline: source data, Snowflake medallion layers, and Power BI.</figcaption>
+          </figure>
+          <div class="project-layer-list" aria-label="Warehouse layers">
+            <article>
+              <h3>Bronze</h3>
+              <p>Retains source-shaped store, customer, product, sales, and returns data.</p>
+            </article>
+            <article>
+              <h3>Silver</h3>
+              <p>Standardizes fields and types, removes duplicates, and validates relationships.</p>
+            </article>
+            <article>
+              <h3>Gold</h3>
+              <p>Organizes analytics models and reporting aggregates for downstream analysis.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="project-detail-section project-detail-objectives" aria-labelledby="objectives-title">
+        <div class="project-detail-inner project-detail-two-column">
+          <h2 id="objectives-title">Project objectives</h2>
+          <ul class="project-objectives-list">
+            <li>Consolidate retail data in a cloud data warehouse.</li>
+            <li>Preserve source-shaped data with traceable, repeatable transformations.</li>
+            <li>Standardize data quality and business definitions across reporting.</li>
+            <li>Deliver documented, tested models for business analysis.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="project-detail-section project-detail-dashboard" aria-labelledby="dashboard-title">
+        <div class="project-detail-inner">
+          <div class="project-detail-copy">
+            <h2 id="dashboard-title">Customer demographics dashboard</h2>
+            <p>The project README includes this Power BI dashboard screenshot.</p>
+          </div>
+          <figure class="project-detail-figure project-dashboard-figure">
+            <img
+              src="https://github.com/user-attachments/assets/52c25392-c6e5-4e2e-88f2-0e69dbc89e18"
+              alt="Customer Demographics report from the Retail Store Analytics Power BI project."
+              width="1471"
+              height="826"
+              loading="lazy"
+            >
+            <figcaption>Customer Demographics report, published in the project repository.</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="project-detail-section project-detail-model" aria-labelledby="model-title">
+        <div class="project-detail-inner project-detail-two-column">
+          <div class="project-detail-copy">
+            <h2 id="model-title">Incremental customer model</h2>
+            <p>
+              The public <code>gold_customer</code> model uses dbt incremental
+              materialization with a merge strategy keyed by customer code.
+            </p>
+            <a class="project-detail-text-link" href="https://github.com/rmmuthoni/data-modeling-with-dbt-snowflake-and-powerbi/blob/main/retail_store/models/gold/gold_customer.sql" target="_blank" rel="noopener noreferrer">Open gold_customer.sql</a>
+          </div>
+          <pre class="project-code"><code>{{
+  config(
+    materialized = 'incremental',
+    unique_key = 'customer_code',
+    incremental_strategy = 'merge'
+  )
+}}</code></pre>
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="site-footer section-shell project-detail-footer">
+      <p>Retail Store Analytics</p>
+      <a href="index.html#projects">Back to projects <span aria-hidden="true">↑</span></a>
+      <p class="footer-note">Muthoni, Rogers</p>
+    </footer>
+  </body>
+</html>
