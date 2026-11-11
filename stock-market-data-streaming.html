@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f4f2ec">
+    <meta
+      name="description"
+      content="Project background, objectives, and architecture for a stock market streaming pipeline built with Kafka, Airflow, Snowflake, dbt, and Power BI."
+    >
+    <title>Stock Market Data Streaming — Muthoni, Rogers</title>
+    <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    >
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header project-detail-header">
+      <nav class="site-nav project-detail-nav" aria-label="Project navigation">
+        <a class="project-home-link" href="index.html#top">Muthoni, Rogers</a>
+        <a class="project-back-link" href="index.html#projects">Back to projects</a>
+      </nav>
+    </header>
+
+    <main id="main" class="project-detail-main">
+      <article>
+      <section class="project-detail-hero section-shell" aria-labelledby="project-title">
+        <div class="project-detail-intro">
+          <h1 id="project-title">Stock Market Data Streaming</h1>
+          <p class="project-detail-subtitle">
+            Finnhub, Kafka, MinIO, Snowflake, dbt, Airflow &amp; Power BI
+          </p>
+          <div class="project-byline">
+            <img src="assets/images/rogers_photo.jpeg" alt="Muthoni, Rogers" width="56" height="56">
+            <p>
+              <span class="project-byline-author">Muthoni, Rogers</span>
+              <span class="project-byline-date">Repository created <time datetime="2026-11-07">November 7, 2026</time></span>
+            </p>
+          </div>
+          <p class="project-detail-lede">
+            A complete data path that streams Finnhub stock quotes through Kafka,
+            stages records in S3-compatible object storage, and prepares curated
+            Snowflake datasets for Power BI.
+          </p>
+          <ul class="project-detail-tools" aria-label="Project technologies">
+            <li><img src="assets/icons/kafka.svg" alt="Apache Kafka"></li>
+            <li><img src="assets/icons/airflow.svg" alt="Apache Airflow"></li>
+            <li><img src="assets/icons/snowflake.svg" alt="Snowflake"></li>
+            <li><img src="assets/icons/dbt.svg" alt="dbt"></li>
+            <li><img src="assets/icons/power-bi.svg" alt="Power BI"></li>
+          </ul>
+          <a
+            class="project-detail-action"
+            href="https://github.com/rmmuthoni/stock-data-streaming-with-kafka-airflow-aws-bucket-snowflake-dbt-and-powerbi"
+            target="_blank"
+            rel="noopener noreferrer"
+          >View project source</a>
+          <a
+            class="project-detail-text-link project-readme-link"
+            href="https://github.com/rmmuthoni/stock-data-streaming-with-kafka-airflow-aws-bucket-snowflake-dbt-and-powerbi#readme"
+            target="_blank"
+            rel="noopener noreferrer"
+          >Read the project README</a>
+        </div>
+      </section>
+
+        <section class="project-detail-section project-detail-background" aria-labelledby="background-title">
+          <div class="project-detail-inner project-detail-two-column">
+            <h2 id="background-title">Project background</h2>
+            <p>
+              Stock quotes are useful for analysis when they can be collected
+              continuously, retained as raw records, and shaped into datasets
+              ready for reporting. This project connects event streaming,
+              object storage, orchestration, warehouse loading, data modeling,
+              and business intelligence in one workflow.
+            </p>
+          </div>
+        </section>
+
+        <section class="project-detail-section project-detail-objectives" aria-labelledby="objectives-title">
+          <div class="project-detail-inner project-detail-two-column">
+            <h2 id="objectives-title">Project objectives</h2>
+            <ul class="project-objectives-list">
+              <li>Retrieve stock market quotes from the Finnhub API.</li>
+              <li>Stream quote messages through Kafka and stage raw JSON in MinIO.</li>
+              <li>Load staged records into Snowflake using an Airflow-managed workflow.</li>
+              <li>Transform warehouse data through bronze, silver, and gold layers with dbt.</li>
+              <li>Publish curated gold-layer datasets for Power BI reporting.</li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="project-detail-section project-detail-architecture" aria-labelledby="architecture-title">
+          <div class="project-detail-inner">
+            <div class="project-detail-copy">
+              <h2 id="architecture-title">Architecture and data flow</h2>
+              <p>
+                A streaming producer and consumer handle quote collection and
+                staging. Airflow schedules the staged-data load into Snowflake;
+                dbt builds the medallion layers, and Power BI connects to the
+                curated gold data.
+              </p>
+            </div>
+            <figure class="project-detail-figure project-architecture-figure">
+              <img
+                src="assets/images/stock-market-data-architecture.png"
+                alt="Stock quote architecture connecting Finnhub, Kafka, object storage, Snowflake, dbt, Airflow, and Power BI."
+                width="1703"
+                height="860"
+                loading="lazy"
+              >
+              <figcaption>Stock market data streaming architecture from the project repository.</figcaption>
+            </figure>
+          </div>
+        </section>
+
+        <section class="project-detail-section project-detail-lifecycle" aria-labelledby="pipeline-title">
+          <div class="project-detail-inner">
+            <div class="project-detail-copy">
+              <h2 id="pipeline-title">How the pipeline works</h2>
+              <p>Each part of the project moves quote data toward an analytics-ready reporting layer.</p>
+            </div>
+            <ul class="stock-pipeline-list">
+              <li>
+                <h3>Collect quotes</h3>
+                <p>A producer requests quote data from Finnhub for configured stock symbols.</p>
+              </li>
+              <li>
+                <h3>Stream events</h3>
+                <p>Quote messages are published to the <code>stock-quotes</code> Kafka topic.</p>
+              </li>
+              <li>
+                <h3>Stage raw records</h3>
+                <p>A consumer writes the JSON messages into an S3-compatible bucket, using MinIO for object storage.</p>
+              </li>
+              <li>
+                <h3>Orchestrate the load</h3>
+                <p>Airflow schedules the staged-file download and Snowflake loading tasks.</p>
+              </li>
+              <li>
+                <h3>Model warehouse data</h3>
+                <p>dbt organizes warehouse transformations into bronze, silver, and gold layers.</p>
+              </li>
+              <li>
+                <h3>Prepare reporting</h3>
+                <p>Power BI connects to gold-layer datasets for visual analysis and reporting.</p>
+              </li>
+            </ul>
+          </div>
+        </section>
+      </article>
+    </main>
+
+    <footer class="site-footer section-shell project-detail-footer">
+      <p>Stock Market Data Streaming</p>
+      <a href="index.html#projects">Back to projects <span aria-hidden="true">↑</span></a>
+      <p class="footer-note">Muthoni, Rogers</p>
+    </footer>
+  </body>
+</html>

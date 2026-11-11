@@ -28,10 +28,18 @@
     </header>
 
     <main id="main" class="project-detail-main">
+      <article>
       <section class="project-detail-hero section-shell" aria-labelledby="project-title">
         <div class="project-detail-intro">
           <h1 id="project-title">Retail Store Analytics</h1>
           <p class="project-detail-subtitle">dbt, Snowflake &amp; Power BI</p>
+          <div class="project-byline">
+            <img src="assets/images/rogers_photo.jpeg" alt="Muthoni, Rogers" width="56" height="56">
+            <p>
+              <span class="project-byline-author">Muthoni, Rogers</span>
+              <span class="project-byline-date">Repository created <time datetime="2026-10-16">October 16, 2026</time></span>
+            </p>
+          </div>
           <p class="project-detail-lede">
             An ELT workflow that loads retail data into Snowflake, transforms it
             through documented dbt models, and publishes analytics-ready data for Power BI.
@@ -47,6 +55,19 @@
             target="_blank"
             rel="noopener noreferrer"
           >View project source</a>
+        </div>
+      </section>
+
+      <section class="project-detail-section project-detail-background" aria-labelledby="background-title">
+        <div class="project-detail-inner project-detail-two-column">
+          <h2 id="background-title">Project background</h2>
+          <p>
+            Retail information can be spread across store, customer, product,
+            sales, and returns systems. This project brings those inputs into a
+            Snowflake warehouse, then uses dbt to create a traceable path from
+            source-shaped records to curated data that Power BI can use for
+            reporting.
+          </p>
         </div>
       </section>
 
@@ -192,10 +213,6 @@
 }}</code></pre>
         </div>
       </section>
-
-    </main>
-
-
       <section class="project-detail-section project-detail-operations" aria-labelledby="operations-title">
         <div class="project-detail-inner">
           <div class="project-detail-copy">
@@ -229,6 +246,8 @@
           </div>
         </div>
       </section>
+      </article>
+    </main>
     <footer class="site-footer section-shell project-detail-footer">
       <p>Retail Store Analytics</p>
       <a href="index.html#projects">Back to projects <span aria-hidden="true">↑</span></a>

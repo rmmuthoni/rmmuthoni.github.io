@@ -63,7 +63,8 @@
 - Include role, organization, dates, supplied responsibilities or outcomes, and company logos where available; retain text labels for each organization.
 
 ### 8.5 Projects
-- Feature four compact project previews in a looping, right-to-left marquee with a pause control and reduced-motion support. Use the supplied Snowflake/dbt architecture image and Snowflake, dbt, and Power BI icons on the retail analytics project; link to its details and GitHub repository.
+- Feature four compact project previews in a looping, right-to-left marquee with a pause control and reduced-motion support. Link the supplied retail analytics and stock market streaming projects to full detail pages and source repositories; keep unsupplied previews visibly marked as placeholders.
+- Format supplied project detail pages as editorial case studies with a project title, owner portrait and author name, repository date, background, objectives, relevant visuals, and links to the source repository.
 - Include a GitHub/source link when one exists; distinguish project-detail and source-code actions.
 - Never invent project facts, links, or outcomes; label temporary sample content as placeholder content.
 
@@ -106,7 +107,7 @@
 - Navigation, hero, My Stack, experience, projects, scratch pad, contact, and footer exist in the specified order.
 - The desktop navigation follows page order, starting with Home. On mobile, the header shows only the hamburger button, which contains the same ordered section links.
 - Hero content introduces the owner over the interactive particle field and has a visible scroll invitation without reserving space for the background or lanyard.
-- Experience presents the two supplied roles and responsibilities; four project previews link to available details and source code.
+- Experience presents the two supplied roles and responsibilities; four project previews include details and source links for the two supplied projects, with remaining preview slots marked as placeholders.
 - Project, experience, and scratch-pad content uses supplied facts or visibly marked placeholders.
 - The interface adapts to common mobile and desktop widths and remains readable.
 - Keyboard navigation, link focus, image alternatives, and contrast receive a basic accessibility check.
@@ -115,7 +116,7 @@
 ## 14. Content dependencies and open items
 - The owner must supply a portrait, role, biography, and a CV or LinkedIn reference. The contact email and Formspree endpoint are configured; approved TikTok, LinkedIn, and GitHub profiles are provided.
 - The owner has supplied two experience entries. Further roles can be added as additional details are ready.
-- The owner supplied the public retail analytics project at [data-modeling-with-dbt-snowflake-and-powerbi](https://github.com/rmmuthoni/data-modeling-with-dbt-snowflake-and-powerbi); three more projects and any additional project imagery or contribution details remain to be supplied.
+- The owner supplied the public retail analytics project at [data-modeling-with-dbt-snowflake-and-powerbi](https://github.com/rmmuthoni/data-modeling-with-dbt-snowflake-and-powerbi) and the [stock market streaming project](https://github.com/rmmuthoni/stock-data-streaming-with-kafka-airflow-aws-bucket-snowflake-dbt-and-powerbi); two more project descriptions and any additional imagery or contribution details remain to be supplied.
 - The owner must provide scratch-pad material and decide which experiments or works in progress to publish.
 - Palette, typography, exact visual style, and optional interaction remain implementation decisions.
 
