@@ -33,7 +33,7 @@
         <div class="project-detail-intro">
           <h1 id="project-title">Stock Market Data Streaming</h1>
           <p class="project-detail-subtitle">
-            Finnhub, Kafka, MinIO, Snowflake, dbt, Airflow &amp; Power BI
+            Finnhub, Kafka, AWS S3, Snowflake, dbt, Airflow &amp; Power BI
           </p>
           <div class="project-byline">
             <img src="assets/images/rogers_photo.jpeg" alt="Muthoni, Rogers" width="56" height="56">
@@ -44,7 +44,7 @@
           </div>
           <p class="project-detail-lede">
             A complete data path that streams Finnhub stock quotes through Kafka,
-            stages records in S3-compatible object storage, and prepares curated
+            stages records in an AWS S3 bucket, and prepares curated
             Snowflake datasets for Power BI.
           </p>
           <ul class="project-detail-tools" aria-label="Project technologies">
@@ -59,7 +59,7 @@
             href="https://github.com/rmmuthoni/stock-data-streaming-with-kafka-airflow-aws-bucket-snowflake-dbt-and-powerbi"
             target="_blank"
             rel="noopener noreferrer"
-          >View project source</a>
+          ><img src="assets/icons/github.svg" alt="" aria-hidden="true">View project source</a>
           <a
             class="project-detail-text-link project-readme-link"
             href="https://github.com/rmmuthoni/stock-data-streaming-with-kafka-airflow-aws-bucket-snowflake-dbt-and-powerbi#readme"
@@ -87,7 +87,7 @@
             <h2 id="objectives-title">Project objectives</h2>
             <ul class="project-objectives-list">
               <li>Retrieve stock market quotes from the Finnhub API.</li>
-              <li>Stream quote messages through Kafka and stage raw JSON in MinIO.</li>
+              <li>Stream quote messages through Kafka and stage raw JSON in an AWS S3 bucket.</li>
               <li>Load staged records into Snowflake using an Airflow-managed workflow.</li>
               <li>Transform warehouse data through bronze, silver, and gold layers with dbt.</li>
               <li>Publish curated gold-layer datasets for Power BI reporting.</li>
@@ -109,12 +109,12 @@
             <figure class="project-detail-figure project-architecture-figure">
               <img
                 src="assets/images/stock-market-data-architecture.png"
-                alt="Stock quote architecture connecting Finnhub, Kafka, object storage, Snowflake, dbt, Airflow, and Power BI."
+                alt="Stock quote architecture connecting Finnhub, Kafka, an AWS S3 bucket, Snowflake, dbt, Airflow, and Power BI."
                 width="1703"
                 height="860"
                 loading="lazy"
               >
-              <figcaption>Stock market data streaming architecture from the project repository.</figcaption>
+              <figcaption>Stock market data pipeline with an AWS S3 bucket for raw-data staging.</figcaption>
             </figure>
           </div>
         </section>
@@ -136,7 +136,7 @@
               </li>
               <li>
                 <h3>Stage raw records</h3>
-                <p>A consumer writes the JSON messages into an S3-compatible bucket, using MinIO for object storage.</p>
+                <p>A consumer writes each quote message as a JSON object to an AWS S3 bucket for raw-data staging.</p>
               </li>
               <li>
                 <h3>Orchestrate the load</h3>
