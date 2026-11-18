@@ -782,6 +782,42 @@ h2 {
   font-size: 0.9rem;
 }
 
+.certifications {
+  width: 100%;
+  max-width: none;
+  padding-block: 6rem;
+  background: #fff;
+}
+
+.certifications-inner {
+  width: min(100%, var(--page-width));
+  margin-inline: auto;
+  padding-inline: var(--page-gutter);
+}
+
+.certifications .section-heading {
+  margin-bottom: 2rem;
+}
+
+.certification-item {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.5rem 1.5rem;
+  max-width: 850px;
+}
+
+.certification-item h3 {
+  margin: 0;
+  font-size: 1.45rem;
+}
+
+.certification-item p {
+  margin: 0;
+  color: var(--muted);
+  font-weight: 600;
+}
+
 .projects {
   padding-top: 7rem;
   padding-bottom: 7rem;
@@ -1539,6 +1575,7 @@ summary:focus-visible {
   }
 
   .experience,
+  .certifications,
   .projects,
   .scratch-pad {
     padding-top: 5rem;
@@ -1703,6 +1740,15 @@ summary:focus-visible {
 .project-detail-intro {
   width: min(100%, var(--page-width));
   margin-inline: auto;
+}
+
+.project-detail-cover {
+  margin: 0 0 clamp(2rem, 4vw, 3rem);
+}
+
+.project-detail-cover img {
+  width: 100%;
+  height: auto;
 }
 
 .project-detail-hero h1 {

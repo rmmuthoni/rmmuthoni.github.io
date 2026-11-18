@@ -14,7 +14,7 @@ This document defines the order an AI coding agent should follow when building o
 
 ### Navigation
 - Build the sticky header first using a flex layout that adapts from laptop to tablet to phone.
-- On wider layouts, arrange links left-to-right in page order: Home, My Stack, Experience, Projects, Scratch pad, and Contact. Style the sticky header as a quiet Material Web app bar. On phones, show the hamburger button in the header and preserve the same link order in its menu.
+- On wider layouts, arrange links left-to-right in page order: Home, My Stack, Experience, Certifications, Projects, Scratch pad, and Contact. Style the sticky header as a quiet Material Web app bar. On phones, show the hamburger button in the header and preserve the same link order in its menu.
 - When links no longer fit, collapse them into an accessible hamburger menu with a clear name, state, keyboard operation, focus treatment, and close behavior.
 - Keep destinations consistent with real section IDs; prevent overflow and preserve a logical reading order.
 
@@ -35,8 +35,12 @@ This document defines the order an AI coding agent should follow when building o
 - Include roles, organizations, dates, and supplied responsibilities or outcomes; include company logos when provided.
 - Keep organization names as text so logos are not the sole source of meaning.
 
+### Certifications
+- Show supplied certifications with their official names and exam or credential codes; do not invent dates, verification links, or additional credentials.
+
 ### Projects
 - Build four featured project previews with an image, title, concise description, and link to fuller project details when available.
+- Lead each project detail page with its relevant project image before the title and description.
 - Include a separate GitHub/source-code link when provided and distinguish it from the details link.
 - Use clearly marked placeholders for missing content; never invent facts, outcomes, or URLs.
 
@@ -50,7 +54,7 @@ This document defines the order an AI coding agent should follow when building o
 
 ## Quality checks
 
-- Check that Navigation, Hero, My Stack, Experience, Projects, Scratch Pad, Contact, and Footer appear in order and are reachable.
+- Check that Navigation, Hero, My Stack, Experience, Certifications, Projects, Scratch Pad, Contact, and Footer appear in order and are reachable.
 - Check flex navigation and the hamburger at laptop, tablet, and phone widths; prevent clipping and horizontal overflow.
 - Use semantic HTML, descriptive alternatives for meaningful images, visible keyboard focus, and sufficient contrast.
 - Keep essential content available without JavaScript; respect reduced-motion preferences for lanyard and scroll-cue motion.

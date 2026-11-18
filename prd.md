@@ -30,7 +30,7 @@
 - Find professional profiles and an email contact link.
 
 ## 7. Scope and priorities
-- **Must have:** Responsive portfolio layout with Navigation, Hero, My Stack, Experience, Projects, Scratch Pad, Contact, and Footer sections.
+- **Must have:** Responsive portfolio layout with Navigation, Hero, My Stack, Experience, Certifications, Projects, Scratch Pad, Contact, and Footer sections.
 - **Must have:** Material Web app bar navigation adapting from laptop to tablet and phone, with links in page order and an accessible hamburger on smaller screens.
 - **Must have:** Four featured project previews and a clear route to fuller project details and imagery when available.
 - **Must have:** Scannable project and experience content with accessible navigation, meaningful image alternatives, and readable color contrast.
@@ -42,7 +42,7 @@
 
 ## 8. Information architecture and core features
 ### 8.1 Navigation
-- Keep the header sticky and style it as a Material Web app bar. Arrange the links in page order—Home, My Stack, Experience, Projects, Scratch pad, Contact—and adapt the layout across devices without clipping.
+- Keep the header sticky and style it as a Material Web app bar. Arrange the links in page order—Home, My Stack, Experience, Certifications, Projects, Scratch pad, Contact—and adapt the layout across devices without clipping.
 - Collapse links into a keyboard-accessible hamburger when they cannot fit; provide clear open, close, and focus states.
 
 ### 8.2 Hero
@@ -62,22 +62,26 @@
 - Show career progression as a readable CV-style timeline or flow connected by an intuitive line.
 - Include role, organization, dates, supplied responsibilities or outcomes, and company logos where available; retain text labels for each organization.
 
-### 8.5 Projects
+### 8.5 Certifications
+- Show the owner's supplied certifications with official credential names and exam codes. Do not invent dates, verification links, or additional credentials.
+- The supplied certification is Microsoft Certified: Fabric Analytics Engineer Associate (DP-600).
+
+### 8.6 Projects
 - Feature four compact project previews in a looping, right-to-left marquee with a pause control and reduced-motion support. Link the supplied retail analytics and stock market streaming projects to full detail pages and source repositories; keep unsupplied previews visibly marked as placeholders.
-- Format supplied project detail pages as editorial case studies with a project title, owner portrait and author name, repository date, background, objectives, relevant visuals, and links to the source repository.
+- Format supplied project detail pages as editorial case studies led by a relevant project image, followed by the title, owner portrait and author name, repository date, background, objectives, relevant visuals, and links to the source repository.
 - Include a GitHub/source link when one exists; distinguish project-detail and source-code actions.
 - Never invent project facts, links, or outcomes; label temporary sample content as placeholder content.
 
-### 8.6 Scratch pad
+### 8.7 Scratch pad
 - Showcase the making process, for example: rough paper idea, BI dashboard sketch, then implemented work shown on a laptop.
 - Explain each stage with a short caption; identify experiments or unfinished work clearly.
 
-### 8.7 Contact and footer
+### 8.8 Contact and footer
 - Provide a contact form delivered through the configured Formspree endpoint, a direct email link, approved profile links, attribution, and a back-to-top link.
 - Do not present example contact information as real owner details.
 
 ## 9. Navigation and interaction
-- Navigation links lead to the relevant page sections in page order, starting with Home and continuing to My Stack, Experience, Projects, Scratch pad, and Contact.
+- Navigation links lead to the relevant page sections in page order, starting with Home and continuing to My Stack, Experience, Certifications, Projects, Scratch pad, and Contact.
 - Provide visible interaction and focus states, and keep essential content available without JavaScript.
 - Use motion sparingly for the lanyard, scroll cue, and hero particle field; honor reduced-motion preferences.
 - A browser cannot guarantee physical haptic feedback, so the scroll prompt must communicate visually without requiring vibration.
@@ -104,10 +108,10 @@
 - Document publishing instructions in the project README as implementation evolves.
 
 ## 13. Acceptance criteria
-- Navigation, hero, My Stack, experience, projects, scratch pad, contact, and footer exist in the specified order.
+- Navigation, hero, My Stack, experience, certifications, projects, scratch pad, contact, and footer exist in the specified order.
 - The desktop navigation follows page order, starting with Home. On mobile, the header shows only the hamburger button, which contains the same ordered section links.
 - Hero content introduces the owner over the interactive particle field and has a visible scroll invitation without reserving space for the background or lanyard.
-- Experience presents the two supplied roles and responsibilities; four project previews include details and source links for the two supplied projects, with remaining preview slots marked as placeholders.
+- Experience presents the two supplied roles and responsibilities; Certifications presents the supplied DP-600 credential; four project previews include details and source links for the two supplied projects, with remaining preview slots marked as placeholders.
 - Project, experience, and scratch-pad content uses supplied facts or visibly marked placeholders.
 - The interface adapts to common mobile and desktop widths and remains readable.
 - Keyboard navigation, link focus, image alternatives, and contrast receive a basic accessibility check.
