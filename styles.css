@@ -1770,9 +1770,9 @@ summary:focus-visible {
   background: linear-gradient(
     180deg,
     transparent 40%,
-    rgb(244 242 236 / 16%) 54%,
-    rgb(244 242 236 / 46%) 70%,
-    rgb(244 242 236 / 84%) 86%,
+    rgb(244 242 236 / 22%) 50%,
+    rgb(244 242 236 / 60%) 60%,
+    rgb(244 242 236 / 92%) 72%,
     var(--paper) 100%
   );
   content: "";
