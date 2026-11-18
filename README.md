@@ -9,7 +9,7 @@ This project is a personal portfolio website for presenting who I am, my career 
 3. **My Stack** — A seamless right-to-left marquee of technology icons for Power BI, Apache Airflow, dbt, Python, Snowflake, databases, Azure Data Factory, Apache Kafka, Microsoft Excel, Google Sheets, and Qlik Sense/QlikView.
 4. **Experience** — CV-style timeline presenting the supplied Business Intelligence Analyst and Data Analytics Intern roles, dates, organizations, and responsibilities.
 5. **Certifications** — Microsoft Certified: Fabric Analytics Engineer Associate (DP-600).
-6. **Projects** — Four compact project previews in a right-to-left marquee, with a pause control. Retail Store Analytics and Stock Market Data Streaming link to editorial-style project details led by their architecture image, followed by an author portrait, repository date, background, objectives, and source links. The other preview slots remain editable placeholders until project details are supplied.
+6. **Projects** — Four compact project previews in a right-to-left marquee, with a pause control. Retail Store Analytics and Stock Market Data Streaming link to editorial-style project details with a blended architecture-image cover and overlaid title, followed by an author portrait, repository date, background, objectives, and source links. The other preview slots remain editable placeholders until project details are supplied.
 7. **Scratch pad** — The creative process, such as an idea on paper, a BI dashboard sketch, and the realized work on a laptop. Identify unfinished work.
 8. **Contact** — A message form delivered through Formspree, with a direct email link and approved social profiles.
 9. **Footer** — Copyright or attribution and a link back to the top.

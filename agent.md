@@ -40,7 +40,7 @@ This document defines the order an AI coding agent should follow when building o
 
 ### Projects
 - Build four featured project previews with an image, title, concise description, and link to fuller project details when available.
-- Lead each project detail page with its relevant project image before the title and description.
+- Lead each project detail page with its relevant image, blend it into the page background, and overlay the project title near its lower edge.
 - Include a separate GitHub/source-code link when provided and distinguish it from the details link.
 - Use clearly marked placeholders for missing content; never invent facts, outcomes, or URLs.
 

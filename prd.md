@@ -68,7 +68,7 @@
 
 ### 8.6 Projects
 - Feature four compact project previews in a looping, right-to-left marquee with a pause control and reduced-motion support. Link the supplied retail analytics and stock market streaming projects to full detail pages and source repositories; keep unsupplied previews visibly marked as placeholders.
-- Format supplied project detail pages as editorial case studies led by a relevant project image, followed by the title, owner portrait and author name, repository date, background, objectives, relevant visuals, and links to the source repository.
+- Format supplied project detail pages as editorial case studies with a relevant lead image blended into the page background and the project title overlaid near its lower edge, followed by the owner portrait and author name, repository date, background, objectives, relevant visuals, and links to the source repository.
 - Include a GitHub/source link when one exists; distinguish project-detail and source-code actions.
 - Never invent project facts, links, or outcomes; label temporary sample content as placeholder content.
 
